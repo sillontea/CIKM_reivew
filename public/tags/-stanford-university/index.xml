@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title> Stanford University on My New Hugo Site</title>
+    <link>http://example.org/tags/-stanford-university/</link>
+    <description>Recent content in  Stanford University on My New Hugo Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 16 Jul 2024 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://example.org/tags/-stanford-university/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Semantic Operators: A Declarative Model for Rich, AI-based Analytics Over Text Data</title>
+      <link>http://example.org/2407.11418/</link>
+      <pubDate>Tue, 16 Jul 2024 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/2407.11418/</guid>
+      <description>{{&amp;lt; keywordList &amp;gt;}} {{&amp;lt; keyword icon=&amp;ldquo;fingerprint&amp;rdquo; &amp;gt;}} 2407.11418 {{&amp;lt; /keyword &amp;gt;}} {{&amp;lt; keyword icon=&amp;ldquo;writer&amp;rdquo; &amp;gt;}} Liana Patel et el. {{&amp;lt; /keyword &amp;gt;}}
+{{&amp;lt; /keywordList &amp;gt;}}
+{{&amp;lt; button href=&amp;ldquo;https://arxiv.org/abs/2407.11418&amp;quot; target=&amp;rdquo;_self&amp;rdquo; &amp;gt;}} ↗ arXiv {{&amp;lt; /button &amp;gt;}} {{&amp;lt; button href=&amp;ldquo;https://huggingface.co/papers/2407.11418&amp;quot; target=&amp;rdquo;_self&amp;rdquo; &amp;gt;}} ↗ Hugging Face {{&amp;lt; /button &amp;gt;}} {{&amp;lt; button href=&amp;ldquo;https://paperswithcode.com/paper/lotus-enabling-semantic-queries-with-llms&amp;quot; target=&amp;rdquo;_self&amp;rdquo; &amp;gt;}} ↗ Papers with Code {{&amp;lt; /button &amp;gt;}}
+TL;DR {{&amp;lt; lead &amp;gt;}}
+Current systems lack high-level abstractions for performing bulk semantic queries on large text datasets.</description>
+    </item>
+    
+  </channel>
+</rss>
