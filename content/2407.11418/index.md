@@ -44,15 +44,15 @@ The paper proposes "semantic operators", a declarative programming interface tha
 #### Key Takeaways
 
 {{< alert "star" >}}
-{{< typeit speed=10 lifeLike=true >}} Semantic operators provide a high-level, declarative interface for complex AI-based analytics on text data. {{< /typeit >}}
+Semantic operators provide a high-level, declarative interface for complex AI-based analytics on text data.
 {{< /alert >}}
 
 {{< alert "star" >}}
-{{< typeit speed=10 startDelay=1000 lifeLike=true >}} LOTUS system significantly accelerates semantic queries (filtering, joining, ranking) by up to 400x while maintaining accuracy. {{< /typeit >}}
+LOTUS system significantly accelerates semantic queries (filtering, joining, ranking) by up to 400x while maintaining accuracy.
 {{< /alert >}}
 
 {{< alert "star" >}}
-{{< typeit speed=10 startDelay=2000 lifeLike=true >}} The approach is demonstrated on real-world applications, achieving state-of-the-art results in multiple tasks. {{< /typeit >}}
+The approach is demonstrated on real-world applications, achieving state-of-the-art results in multiple tasks.
 {{< /alert >}}
 
 #### Why does it matter?

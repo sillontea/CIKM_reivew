@@ -1,0 +1,2016 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr" class="scroll-smooth" data-default-appearance="light"
+  data-auto-appearance="true"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=6006&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8" />
+  
+  <meta http-equiv="content-language" content="en-us" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  
+  <title>Smarter, Better, Faster, Longer: A Modern Bidirectional Encoder for Fast, Memory Efficient, and Long Context Finetuning and Inference &middot; CIKM Paper Reviewer</title>
+  <meta name="title" content="Smarter, Better, Faster, Longer: A Modern Bidirectional Encoder for Fast, Memory Efficient, and Long Context Finetuning and Inference &middot; CIKM Paper Reviewer" />
+  
+  <meta name="description" content="ModernBERT: Blazing-fast, memory-efficient encoder-only transformer model achieving state-of-the-art performance on diverse tasks with 8192 sequence length." />
+  <meta name="keywords" content="Natural Language Processing, Large Language Models, 🏢 Answer.AI, " />
+  
+  
+  <link rel="canonical" href="http://localhost:6006/2412.13663/" />
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <link type="text/css" rel="stylesheet" href="/css/main.bundle.min.e27868ab1485f7ed7b06b122b4980bd38b19526eb8f7de885181204d28f04a0c47e9c334eff19a06c0278eb2ff8415b983a5d0fb80fd6b5680c926457cc61c57.css"
+    integrity="sha512-4nhoqxSF9&#43;17BrEitJgL04sZUm64996IUYEgTSjwSgxH6cM07/GaBsAnjrL/hBW5g6XQ&#43;4D9a1aAySZFfMYcVw==" />
+  
+  
+  <script type="text/javascript" src="/js/appearance.min.516a16745bea5a9bd011138d254cc0fd3973cd55ce6e15f3dec763e7c7c2c7448f8fe7b54cca811cb821b0c7e12cd161caace1dd794ac3d34d40937cbcc9ee12.js"
+    integrity="sha512-UWoWdFvqWpvQERONJUzA/TlzzVXObhXz3sdj58fCx0SPj&#43;e1TMqBHLghsMfhLNFhyqzh3XlKw9NNQJN8vMnuEg=="></script>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <script defer type="text/javascript" id="script-bundle" src="/js/main.bundle.min.c178288131a2f1ad46910438db47ac5f7e1c48cf949e49f6dc3310c8ec9660e23fe505805eba4e2e73711335808500360d773a2b64322feb35df52856edca286.js"
+    integrity="sha512-wXgogTGi8a1GkQQ420esX34cSM&#43;Unkn23DMQyOyWYOI/5QWAXrpOLnNxEzWAhQA2DXc6K2QyL&#43;s131KFbtyihg==" data-copy="" data-copied=""></script>
+  
+  
+  
+  <script src="/lib/zoom/zoom.min.37d2094687372da3f7343a221a470f6b8806f7891aa46a5a03966af7f0ebd38b9fe536cb154e6ad28f006d184b294525a7c4054b6bbb4be62d8b453b42db99bd.js" integrity="sha512-N9IJRoc3LaP3NDoiGkcPa4gG94kapGpaA5Zq9/Dr04uf5TbLFU5q0o8AbRhLKUUlp8QFS2u7S&#43;Yti0U7QtuZvQ=="></script>
+  
+  
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  
+  
+  
+  
+  
+  
+  
+  
+  <meta property="og:url" content="http://localhost:6006/2412.13663/">
+  <meta property="og:site_name" content="CIKM Paper Reviewer">
+  <meta property="og:title" content="Smarter, Better, Faster, Longer: A Modern Bidirectional Encoder for Fast, Memory Efficient, and Long Context Finetuning and Inference">
+  <meta property="og:description" content="ModernBERT: Blazing-fast, memory-efficient encoder-only transformer model achieving state-of-the-art performance on diverse tasks with 8192 sequence length.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:published_time" content="2024-12-18T00:00:00+00:00">
+    <meta property="article:modified_time" content="2024-12-18T00:00:00+00:00">
+    <meta property="article:tag" content="Natural Language Processing">
+    <meta property="article:tag" content="Large Language Models">
+    <meta property="article:tag" content="🏢 Answer.AI">
+
+  
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Smarter, Better, Faster, Longer: A Modern Bidirectional Encoder for Fast, Memory Efficient, and Long Context Finetuning and Inference">
+  <meta name="twitter:description" content="ModernBERT: Blazing-fast, memory-efficient encoder-only transformer model achieving state-of-the-art performance on diverse tasks with 8192 sequence length.">
+
+  
+  <script type="application/ld+json">
+  [{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "articleSection": "CIKM Paper Reviewer",
+    "name": "Smarter, Better, Faster, Longer: A Modern Bidirectional Encoder for Fast, Memory Efficient, and Long Context Finetuning and Inference",
+    "headline": "Smarter, Better, Faster, Longer: A Modern Bidirectional Encoder for Fast, Memory Efficient, and Long Context Finetuning and Inference",
+    
+    "abstract": "ModernBERT: Blazing-fast, memory-efficient encoder-only transformer model achieving state-of-the-art performance on diverse tasks with 8192 sequence length.",
+    "inLanguage": "en-us",
+    "url" : "http:\/\/localhost:6006\/2412.13663\/",
+    "author" : {
+      "@type": "Person",
+      "name": ""
+    },
+    "copyrightYear": "2024",
+    "dateCreated": "2024-12-18T00:00:00\u002b00:00",
+    "datePublished": "2024-12-18T00:00:00\u002b00:00",
+    
+    "dateModified": "2024-12-18T00:00:00\u002b00:00",
+    
+    "keywords": ["Natural Language Processing","Large Language Models","🏢 Answer.AI"],
+    
+    "mainEntityOfPage": "true",
+    "wordCount": "2481"
+  }]
+  </script>
+
+
+  
+  
+  
+  
+  
+
+<script src="/lib/jquery/jquery.slim.min.b0dca576e87d7eaa5850ae4e61759c065786cdb6489d68fcc82240539eebd5da522bdb4fda085ffd245808c8fe2acb2516408eb774ef26b5f6015fc6737c0ea8.js" integrity="sha512-sNylduh9fqpYUK5OYXWcBleGzbZInWj8yCJAU57r1dpSK9tP2ghf/SRYCMj&#43;KsslFkCOt3TvJrX2AV/Gc3wOqA=="></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    <script defer src="/lib/packery/packery.pkgd.min.js" integrity=""></script>
+
+    
+    
+    <script type="text/javascript" src="/js/shortcodes/gallery.min.9b4cb28f931ed922c26fb9b2510c2debb370f6a63305050c2af81740b2919883715e24efbbdf3a081496718ec751df3a72729d4d0bc71d6071297563a97ce1ee.js" integrity="sha512-m0yyj5Me2SLCb7myUQwt67Nw9qYzBQUMKvgXQLKRmINxXiTvu986CBSWcY7HUd86cnKdTQvHHWBxKXVjqXzh7g=="></script>
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+  
+  
+  <meta name="theme-color"/>
+  
+  
+</head>
+<body
+  class="flex flex-col h-screen px-6 m-auto text-lg leading-7 max-w-7xl bg-neutral text-neutral-900 dark:bg-neutral-800 dark:text-neutral sm:px-14 md:px-24 lg:px-32 scrollbar-thin scrollbar-track-neutral-200 scrollbar-thumb-neutral-400 dark:scrollbar-track-neutral-800 dark:scrollbar-thumb-neutral-600">
+  <div id="the-top" class="absolute flex self-center">
+    <a class="px-3 py-1 text-sm -translate-y-8 rounded-b-lg bg-primary-200 focus:translate-y-0 dark:bg-neutral-600"
+      href="#main-content"><span
+        class="font-bold text-primary-600 ltr:pr-2 rtl:pl-2 dark:text-primary-400">&darr;</span>Skip to main content</a>
+  </div>
+  
+  
+  <div style="padding-left:0;padding-right:0;padding-top:2px;padding-bottom:3px"
+    class="main-menu flex items-center justify-between px-4 py-6 sm:px-6 md:justify-start space-x-3">
+    
+    <div class="flex flex-1 items-center justify-between">
+        <nav class="flex space-x-3">
+
+            
+            <a href="/" class="text-base font-medium text-gray-500 hover:text-gray-900">CIKM Paper Reviewer</a>
+            
+
+        </nav>
+        <nav class="hidden md:flex items-center space-x-5 md:ml-12 h-12">
+
+            
+
+            
+
+
+            
+            <button id="search-button" aria-label="Search" class="text-base hover:text-primary-600 dark:hover:text-primary-400"
+                title="">
+                
+
+  <span class="relative block icon">
+    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+
+  </span>
+
+
+            </button>
+            
+
+
+            
+            
+            <div
+                class="ltr:mr-14 rtl:ml-14 flex items-center">
+                <button id="appearance-switcher" aria-label="Dark mode switcher" type="button" class="text-base hover:text-primary-600 dark:hover:text-primary-400">
+                    <div class="flex items-center justify-center dark:hidden">
+                        
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M32 256c0-123.8 100.3-224 223.8-224c11.36 0 29.7 1.668 40.9 3.746c9.616 1.777 11.75 14.63 3.279 19.44C245 86.5 211.2 144.6 211.2 207.8c0 109.7 99.71 193 208.3 172.3c9.561-1.805 16.28 9.324 10.11 16.95C387.9 448.6 324.8 480 255.8 480C132.1 480 32 379.6 32 256z"/></svg>
+
+  </span>
+
+
+                    </div>
+                    <div class="items-center justify-center hidden dark:flex">
+                        
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 159.1c-53.02 0-95.1 42.98-95.1 95.1S202.1 351.1 256 351.1s95.1-42.98 95.1-95.1S309 159.1 256 159.1zM509.3 347L446.1 255.1l63.15-91.01c6.332-9.125 1.104-21.74-9.826-23.72l-109-19.7l-19.7-109c-1.975-10.93-14.59-16.16-23.72-9.824L256 65.89L164.1 2.736c-9.125-6.332-21.74-1.107-23.72 9.824L121.6 121.6L12.56 141.3C1.633 143.2-3.596 155.9 2.736 164.1L65.89 256l-63.15 91.01c-6.332 9.125-1.105 21.74 9.824 23.72l109 19.7l19.7 109c1.975 10.93 14.59 16.16 23.72 9.824L256 446.1l91.01 63.15c9.127 6.334 21.75 1.107 23.72-9.822l19.7-109l109-19.7C510.4 368.8 515.6 356.1 509.3 347zM256 383.1c-70.69 0-127.1-57.31-127.1-127.1c0-70.69 57.31-127.1 127.1-127.1s127.1 57.3 127.1 127.1C383.1 326.7 326.7 383.1 256 383.1z"/></svg>
+
+  </span>
+
+
+                    </div>
+                </button>
+            </div>
+            
+
+        </nav>
+        <div class="flex md:hidden items-center space-x-5 md:ml-12 h-12">
+
+            <span></span>
+
+            
+
+
+            
+            <button id="search-button-mobile" aria-label="Search" class="text-base hover:text-primary-600 dark:hover:text-primary-400"
+                title="">
+                
+
+  <span class="relative block icon">
+    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+
+  </span>
+
+
+            </button>
+            
+
+            
+            
+            <button id="appearance-switcher-mobile" aria-label="Dark mode switcher" type="button" class="text-base hover:text-primary-600 dark:hover:text-primary-400" style="margin-right:5px">
+                <div class="flex items-center justify-center dark:hidden">
+                    
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M32 256c0-123.8 100.3-224 223.8-224c11.36 0 29.7 1.668 40.9 3.746c9.616 1.777 11.75 14.63 3.279 19.44C245 86.5 211.2 144.6 211.2 207.8c0 109.7 99.71 193 208.3 172.3c9.561-1.805 16.28 9.324 10.11 16.95C387.9 448.6 324.8 480 255.8 480C132.1 480 32 379.6 32 256z"/></svg>
+
+  </span>
+
+
+                </div>
+                <div class="items-center justify-center hidden dark:flex">
+                    
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 159.1c-53.02 0-95.1 42.98-95.1 95.1S202.1 351.1 256 351.1s95.1-42.98 95.1-95.1S309 159.1 256 159.1zM509.3 347L446.1 255.1l63.15-91.01c6.332-9.125 1.104-21.74-9.826-23.72l-109-19.7l-19.7-109c-1.975-10.93-14.59-16.16-23.72-9.824L256 65.89L164.1 2.736c-9.125-6.332-21.74-1.107-23.72 9.824L121.6 121.6L12.56 141.3C1.633 143.2-3.596 155.9 2.736 164.1L65.89 256l-63.15 91.01c-6.332 9.125-1.105 21.74 9.824 23.72l109 19.7l19.7 109c1.975 10.93 14.59 16.16 23.72 9.824L256 446.1l91.01 63.15c9.127 6.334 21.75 1.107 23.72-9.822l19.7-109l109-19.7C510.4 368.8 515.6 356.1 509.3 347zM256 383.1c-70.69 0-127.1-57.31-127.1-127.1c0-70.69 57.31-127.1 127.1-127.1s127.1 57.3 127.1 127.1C383.1 326.7 326.7 383.1 256 383.1z"/></svg>
+
+  </span>
+
+
+                </div>
+            </button>
+            
+
+        </div>
+    </div>
+    <div class="-my-2 -mr-2 md:hidden">
+
+        <label id="menu-button" class="block">
+            
+
+            </div>
+        </label>
+    </div>
+</div>
+
+
+
+
+
+  
+  <div class="relative flex flex-col grow">
+    <main id="main-content" class="grow">
+      
+
+
+<article>
+  
+
+  <header id="single_header" class="mt-5 max-w-prose">
+    
+    <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
+      Smarter, Better, Faster, Longer: A Modern Bidirectional Encoder for Fast, Memory Efficient, and Long Context Finetuning and Inference
+    </h1>
+    <div class="mt-1 mb-6 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
+      
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="flex flex-row flex-wrap items-center">
+  
+  
+  <time datetime="2024-12-18T00:00:00&#43;00:00">December 18, 2024</time><span class="px-2 text-primary-500">&middot;</span><span>2481 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">12 mins</span>
+  
+
+  
+  
+</div>
+
+
+
+
+
+
+
+
+    </div>
+
+    
+    
+    
+    
+    
+
+    
+
+    
+      
+      
+        
+        
+<div class="flex author">
+  
+  <div class="place-self-center">
+    
+    
+    <div class="text-2xl sm:text-lg">
+</div>
+  </div>
+</div>
+
+      
+
+      
+
+      
+      <div class="mb-5"></div>
+      
+
+    
+
+  </header>
+  
+  <section class="flex flex-col max-w-full mt-0 prose dark:prose-invert lg:flex-row">
+    
+    
+
+      <div class="min-w-0 min-h-0 max-w-fit">
+        
+        
+
+
+        <div class="article-content max-w-prose mb-20">
+          <!-- raw HTML omitted -->
+<div class="flex flex-row flex-wrap items-center space-x-2">
+
+<div class="flex mt-2">
+<span
+  class="rounded-full bg-primary-500 dark:bg-primary-400 text-neutral-50 dark:text-neutral-800 px-1.5 py-[1px] text-xs font-normal"
+>
+  <span class="flex flex-row items-center">
+    
+    <span class="mr-1">
+
+</span>
+    
+    <span>2412.13663</span>
+  </span>
+</span>
+</div>
+
+<div class="flex mt-2">
+<span
+  class="rounded-full bg-primary-500 dark:bg-primary-400 text-neutral-50 dark:text-neutral-800 px-1.5 py-[1px] text-xs font-normal"
+>
+  <span class="flex flex-row items-center">
+    
+    <span class="mr-1">
+
+</span>
+    
+    <span>Benjamin Warner et el.</span>
+  </span>
+</span>
+</div>
+ 
+</div>
+
+<p><a
+  class="!rounded-md bg-primary-600 px-4 py-2 !text-neutral !no-underline hover:!bg-primary-500 dark:bg-primary-800 dark:hover:!bg-primary-700"
+  href="https://arxiv.org/abs/2412.13663"
+  target="_self"
+  
+  role="button"
+>
+  
+↗ arXiv
+
+</a>
+
+<a
+  class="!rounded-md bg-primary-600 px-4 py-2 !text-neutral !no-underline hover:!bg-primary-500 dark:bg-primary-800 dark:hover:!bg-primary-700"
+  href="https://huggingface.co/papers/2412.13663"
+  target="_self"
+  
+  role="button"
+>
+  
+↗ Hugging Face
+
+</a>
+
+<a
+  class="!rounded-md bg-primary-600 px-4 py-2 !text-neutral !no-underline hover:!bg-primary-500 dark:bg-primary-800 dark:hover:!bg-primary-700"
+  href="https://paperswithcode.com/paper/smarter-better-faster-longer-a-modern"
+  target="_self"
+  
+  role="button"
+>
+  
+↗ Papers with Code
+
+</a>
+</p>
+
+
+<h3 class="relative group">TL;DR 
+    <div id="tldr" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#tldr" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<div class="lead text-neutral-500 dark:text-neutral-400 !mb-9 text-xl">
+  <p>Encoder-only transformer models like BERT are widely used for tasks such as text classification and retrieval, but improvements have been limited since BERT&rsquo;s release.  Existing models often suffer from limitations in context length (typically 512 tokens), suboptimal architectures, and training data restrictions, hindering performance and efficiency.  These limitations necessitate advancements in encoder models to improve performance on long-context tasks and resource-constrained environments.</p>
+<p>This research introduces ModernBERT, a novel encoder-only model addressing these issues.  <strong>ModernBERT incorporates modern optimizations such as Flash Attention, Rotary Position Embeddings, and GeGLU activations</strong>.  Trained on a massive dataset (2 trillion tokens) with a native 8192 sequence length, <strong>ModernBERT achieves state-of-the-art performance across various benchmarks</strong> encompassing diverse tasks and domains, including code retrieval.  Its high efficiency makes it suitable for deployment on common GPUs, providing a significant leap forward in encoder-only models.</p>
+
+</div>
+
+
+
+<h4 class="relative group">Key Takeaways 
+    <div id="key-takeaways" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#key-takeaways" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
+
+  
+
+
+
+<div
+  
+    class="flex px-4 py-3 rounded-md bg-primary-100 dark:bg-primary-900"
+  >
+
+  <span
+    
+      class="text-primary-400 ltr:pr-3 rtl:pl-3 flex items-center"
+    >
+
+    
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path fill="currentColor" d="M287.9 0C297.1 0 305.5 5.25 309.5 13.52L378.1 154.8L531.4 177.5C540.4 178.8 547.8 185.1 550.7 193.7C553.5 202.4 551.2 211.9 544.8 218.2L433.6 328.4L459.9 483.9C461.4 492.9 457.7 502.1 450.2 507.4C442.8 512.7 432.1 513.4 424.9 509.1L287.9 435.9L150.1 509.1C142.9 513.4 133.1 512.7 125.6 507.4C118.2 502.1 114.5 492.9 115.1 483.9L142.2 328.4L31.11 218.2C24.65 211.9 22.36 202.4 25.2 193.7C28.03 185.1 35.5 178.8 44.49 177.5L197.7 154.8L266.3 13.52C270.4 5.249 278.7 0 287.9 0L287.9 0zM287.9 78.95L235.4 187.2C231.9 194.3 225.1 199.3 217.3 200.5L98.98 217.9L184.9 303C190.4 308.5 192.9 316.4 191.6 324.1L171.4 443.7L276.6 387.5C283.7 383.7 292.2 383.7 299.2 387.5L404.4 443.7L384.2 324.1C382.9 316.4 385.5 308.5 391 303L476.9 217.9L358.6 200.5C350.7 199.3 343.9 194.3 340.5 187.2L287.9 78.95z"/></svg>
+  </span>
+
+
+  </span>
+
+  <span
+    
+      class="dark:text-neutral-300"
+    >ModernBERT significantly improves speed and memory efficiency compared to existing encoder-only models.</span>
+</div>
+
+
+  
+
+
+
+<div
+  
+    class="flex px-4 py-3 rounded-md bg-primary-100 dark:bg-primary-900"
+  >
+
+  <span
+    
+      class="text-primary-400 ltr:pr-3 rtl:pl-3 flex items-center"
+    >
+
+    
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path fill="currentColor" d="M287.9 0C297.1 0 305.5 5.25 309.5 13.52L378.1 154.8L531.4 177.5C540.4 178.8 547.8 185.1 550.7 193.7C553.5 202.4 551.2 211.9 544.8 218.2L433.6 328.4L459.9 483.9C461.4 492.9 457.7 502.1 450.2 507.4C442.8 512.7 432.1 513.4 424.9 509.1L287.9 435.9L150.1 509.1C142.9 513.4 133.1 512.7 125.6 507.4C118.2 502.1 114.5 492.9 115.1 483.9L142.2 328.4L31.11 218.2C24.65 211.9 22.36 202.4 25.2 193.7C28.03 185.1 35.5 178.8 44.49 177.5L197.7 154.8L266.3 13.52C270.4 5.249 278.7 0 287.9 0L287.9 0zM287.9 78.95L235.4 187.2C231.9 194.3 225.1 199.3 217.3 200.5L98.98 217.9L184.9 303C190.4 308.5 192.9 316.4 191.6 324.1L171.4 443.7L276.6 387.5C283.7 383.7 292.2 383.7 299.2 387.5L404.4 443.7L384.2 324.1C382.9 316.4 385.5 308.5 391 303L476.9 217.9L358.6 200.5C350.7 199.3 343.9 194.3 340.5 187.2L287.9 78.95z"/></svg>
+  </span>
+
+
+  </span>
+
+  <span
+    
+      class="dark:text-neutral-300"
+    >ModernBERT achieves state-of-the-art results on various NLP tasks, including classification and retrieval, with an extended 8192 token context length.</span>
+</div>
+
+
+  
+
+
+
+<div
+  
+    class="flex px-4 py-3 rounded-md bg-primary-100 dark:bg-primary-900"
+  >
+
+  <span
+    
+      class="text-primary-400 ltr:pr-3 rtl:pl-3 flex items-center"
+    >
+
+    
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path fill="currentColor" d="M287.9 0C297.1 0 305.5 5.25 309.5 13.52L378.1 154.8L531.4 177.5C540.4 178.8 547.8 185.1 550.7 193.7C553.5 202.4 551.2 211.9 544.8 218.2L433.6 328.4L459.9 483.9C461.4 492.9 457.7 502.1 450.2 507.4C442.8 512.7 432.1 513.4 424.9 509.1L287.9 435.9L150.1 509.1C142.9 513.4 133.1 512.7 125.6 507.4C118.2 502.1 114.5 492.9 115.1 483.9L142.2 328.4L31.11 218.2C24.65 211.9 22.36 202.4 25.2 193.7C28.03 185.1 35.5 178.8 44.49 177.5L197.7 154.8L266.3 13.52C270.4 5.249 278.7 0 287.9 0L287.9 0zM287.9 78.95L235.4 187.2C231.9 194.3 225.1 199.3 217.3 200.5L98.98 217.9L184.9 303C190.4 308.5 192.9 316.4 191.6 324.1L171.4 443.7L276.6 387.5C283.7 383.7 292.2 383.7 299.2 387.5L404.4 443.7L384.2 324.1C382.9 316.4 385.5 308.5 391 303L476.9 217.9L358.6 200.5C350.7 199.3 343.9 194.3 340.5 187.2L287.9 78.95z"/></svg>
+  </span>
+
+
+  </span>
+
+  <span
+    
+      class="dark:text-neutral-300"
+    >ModernBERT&rsquo;s modular design and released codebase facilitate further research and experimentation in encoder-only models.</span>
+</div>
+
+
+
+<h4 class="relative group">Why does it matter? 
+    <div id="why-does-it-matter" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#why-does-it-matter" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
+<p>This paper is important because it presents <strong>ModernBERT</strong>, a significant advancement in encoder-only transformer models.  It addresses limitations of existing models by improving efficiency, expanding context length, and achieving state-of-the-art results on various tasks. This work is relevant to researchers in NLP, IR, and ML, opening avenues for efficient long-context applications and pushing the boundaries of encoder-only model capabilities.  The released codebase and model weights further enhance its impact.</p>
+<hr>
+
+
+<h4 class="relative group">Visual Insights 
+    <div id="visual-insights" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#visual-insights" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
+<div class="table-caption">
+  <table>
+  <thead>
+      <tr>
+          <th style="text-align: left"></th>
+          <th style="text-align: left">Model</th>
+          <th style="text-align: center">IR (DPR) BEIR</th>
+          <th style="text-align: center">IR (DPR) MLDR<!-- raw HTML omitted -->OOD<!-- raw HTML omitted --></th>
+          <th style="text-align: center">IR (DPR) MLDR<!-- raw HTML omitted -->ID<!-- raw HTML omitted --></th>
+          <th style="text-align: center">IR (ColBERT) BEIR</th>
+          <th style="text-align: center">IR (ColBERT) MLDR<!-- raw HTML omitted -->OOD<!-- raw HTML omitted --></th>
+          <th style="text-align: center">NLU</th>
+          <th style="text-align: center">Code GLUE</th>
+          <th style="text-align: center">Code CSN</th>
+          <th style="text-align: center">Code SQA</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->Base<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --></td>
+          <td style="text-align: left">BERT</td>
+          <td style="text-align: center">38.9</td>
+          <td style="text-align: center">23.9</td>
+          <td style="text-align: center">32.2</td>
+          <td style="text-align: center">49.0</td>
+          <td style="text-align: center">28.1</td>
+          <td style="text-align: center">84.7</td>
+          <td style="text-align: center">41.2</td>
+          <td style="text-align: center">59.5</td>
+          <td style="text-align: center"></td>
+      </tr>
+      <tr>
+          <td style="text-align: left"></td>
+          <td style="text-align: left">RoBERTa</td>
+          <td style="text-align: center">37.7</td>
+          <td style="text-align: center">22.9</td>
+          <td style="text-align: center">32.8</td>
+          <td style="text-align: center">48.7</td>
+          <td style="text-align: center">28.2</td>
+          <td style="text-align: center">86.4</td>
+          <td style="text-align: center">44.3</td>
+          <td style="text-align: center">59.6</td>
+          <td style="text-align: center"></td>
+      </tr>
+      <tr>
+          <td style="text-align: left"></td>
+          <td style="text-align: left">DeBERTaV3</td>
+          <td style="text-align: center">20.2</td>
+          <td style="text-align: center">5.4</td>
+          <td style="text-align: center">13.4</td>
+          <td style="text-align: center">47.1</td>
+          <td style="text-align: center">21.9</td>
+          <td style="text-align: center">88.1</td>
+          <td style="text-align: center">17.5</td>
+          <td style="text-align: center">18.6</td>
+          <td style="text-align: center"></td>
+      </tr>
+      <tr>
+          <td style="text-align: left"></td>
+          <td style="text-align: left">NomicBERT</td>
+          <td style="text-align: center">41.0</td>
+          <td style="text-align: center">26.7</td>
+          <td style="text-align: center">30.3</td>
+          <td style="text-align: center">49.9</td>
+          <td style="text-align: center">61.3</td>
+          <td style="text-align: center">84.0</td>
+          <td style="text-align: center">41.6</td>
+          <td style="text-align: center">61.4</td>
+          <td style="text-align: center"></td>
+      </tr>
+      <tr>
+          <td style="text-align: left"></td>
+          <td style="text-align: left">GTE-en-MLM</td>
+          <td style="text-align: center">41.4</td>
+          <td style="text-align: center"><strong>34.3</strong></td>
+          <td style="text-align: center">44.4</td>
+          <td style="text-align: center">48.2</td>
+          <td style="text-align: center">69.3</td>
+          <td style="text-align: center">85.6</td>
+          <td style="text-align: center">44.9</td>
+          <td style="text-align: center">71.4</td>
+          <td style="text-align: center"></td>
+      </tr>
+      <tr>
+          <td style="text-align: left"></td>
+          <td style="text-align: left">ModernBERT</td>
+          <td style="text-align: center"><strong>41.6</strong></td>
+          <td style="text-align: center">27.4</td>
+          <td style="text-align: center"><strong>44.0</strong></td>
+          <td style="text-align: center"><strong>80.2</strong></td>
+          <td style="text-align: center"><strong>88.4</strong></td>
+          <td style="text-align: center"><strong>56.4</strong></td>
+          <td style="text-align: center"><strong>73.6</strong></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->Large<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --></td>
+          <td style="text-align: left">BERT</td>
+          <td style="text-align: center">38.9</td>
+          <td style="text-align: center">23.3</td>
+          <td style="text-align: center">31.7</td>
+          <td style="text-align: center">49.5</td>
+          <td style="text-align: center">28.5</td>
+          <td style="text-align: center">85.2</td>
+          <td style="text-align: center">41.6</td>
+          <td style="text-align: center">60.8</td>
+          <td style="text-align: center"></td>
+      </tr>
+      <tr>
+          <td style="text-align: left"></td>
+          <td style="text-align: left">RoBERTa</td>
+          <td style="text-align: center">41.4</td>
+          <td style="text-align: center">22.6</td>
+          <td style="text-align: center">36.1</td>
+          <td style="text-align: center">49.8</td>
+          <td style="text-align: center">28.8</td>
+          <td style="text-align: center">88.9</td>
+          <td style="text-align: center">47.3</td>
+          <td style="text-align: center">68.1</td>
+          <td style="text-align: center"></td>
+      </tr>
+      <tr>
+          <td style="text-align: left"></td>
+          <td style="text-align: left">DeBERTaV3</td>
+          <td style="text-align: center">25.6</td>
+          <td style="text-align: center">7.1</td>
+          <td style="text-align: center">19.2</td>
+          <td style="text-align: center">46.7</td>
+          <td style="text-align: center">23.0</td>
+          <td style="text-align: center"><strong>91.4</strong></td>
+          <td style="text-align: center">21.2</td>
+          <td style="text-align: center">19.7</td>
+          <td style="text-align: center"></td>
+      </tr>
+      <tr>
+          <td style="text-align: left"></td>
+          <td style="text-align: left">GTE-en-MLM</td>
+          <td style="text-align: center">42.5</td>
+          <td style="text-align: center"><strong>36.4</strong></td>
+          <td style="text-align: center"><strong>48.9</strong></td>
+          <td style="text-align: center">50.7</td>
+          <td style="text-align: center">71.3</td>
+          <td style="text-align: center">87.6</td>
+          <td style="text-align: center">40.5</td>
+          <td style="text-align: center">66.9</td>
+          <td style="text-align: center"></td>
+      </tr>
+      <tr>
+          <td style="text-align: left"></td>
+          <td style="text-align: left">ModernBERT</td>
+          <td style="text-align: center"><strong>44.0</strong></td>
+          <td style="text-align: center">34.3</td>
+          <td style="text-align: center"><strong>52.4</strong></td>
+          <td style="text-align: center"><strong>80.4</strong></td>
+          <td style="text-align: center">90.4</td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"><strong>59.5</strong></td>
+          <td style="text-align: center"><strong>83.9</strong></td>
+          <td style="text-align: center"></td>
+      </tr>
+  </tbody>
+</table>
+
+</div>
+
+
+<blockquote>
+<p>🔼 This table presents the performance of various encoder-only models across multiple downstream tasks.  It compares the performance of ModernBERT (the model introduced in the paper) against several established models (BERT, RoBERTa, DeBERTa-v3, NomicBERT, and GTE-en-MLM). The tasks encompass a range of natural language understanding benchmarks (GLUE), code retrieval tasks (CodeSearchNet, StackQA), and text retrieval tasks (BEIR, MLDR).  For text retrieval, the table distinguishes between in-domain (MLDRID, fine-tuned on training data) and out-of-domain (MLDROOD) evaluations.  This allows for a comprehensive comparison of model performance across diverse tasks and data settings.</p>
+<!-- raw HTML omitted -->
+</blockquote>
+
+
+<h3 class="relative group">In-depth insights 
+    <div id="in-depth-insights" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#in-depth-insights" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+
+
+<h4 class="relative group">ModernBERT&rsquo;s Design 
+    <div id="modernberts-design" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#modernberts-design" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
+<p>ModernBERT&rsquo;s design is a thoughtful blend of established transformer architecture and modern optimization techniques.  <strong>Key improvements</strong> include the use of rotary positional embeddings for better long-context performance, <strong>efficient GeGLU activations</strong> for faster training, and <strong>pre-normalization</strong> for improved stability.  <strong>The adoption of Flash Attention</strong> significantly enhances speed and memory efficiency, especially crucial for processing longer sequences.  Furthermore, the model is designed with <strong>hardware-aware considerations</strong>, optimizing for GPU utilization.  The careful selection of these components, combined with an extensive ablation study, demonstrates a deliberate and effective approach to achieving state-of-the-art performance on a wide array of tasks, addressing both the limitations of previous encoder-only models and the challenges of scaling to larger datasets.</p>
+
+
+<h4 class="relative group">Efficiency Gains 
+    <div id="efficiency-gains" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#efficiency-gains" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
+<p>The research paper highlights significant efficiency gains in the ModernBERT model, achieved through a combination of architectural improvements and optimized implementation strategies.  <strong>FlashAttention</strong>, a memory and compute efficient attention mechanism, plays a crucial role in reducing both inference time and memory footprint.  Further efficiency is gained from techniques like <strong>unpadding</strong>, which eliminates the need for processing empty padding tokens, resulting in faster processing speeds.  <strong>Architectural optimizations</strong> such as the use of GeGLU activation functions, rotary positional embeddings, and a carefully designed deep and narrow model architecture also contribute to the observed speed and memory improvements.  <strong>GPU-optimized model design</strong> ensures efficient hardware utilization, leading to significant gains in inference speed and throughput. Overall, these strategies synergistically work to produce a highly efficient model, making it suitable for deploying in resource-constrained environments while maintaining state-of-the-art performance on a wide range of tasks.</p>
+
+
+<h4 class="relative group">Benchmark Results 
+    <div id="benchmark-results" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#benchmark-results" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
+<p>A dedicated &lsquo;Benchmark Results&rsquo; section would ideally present a thorough comparison of the proposed model, ModernBERT, against existing state-of-the-art models across various NLP tasks.  This would involve presenting quantitative metrics (e.g., accuracy, F1-score, BLEU score, NDCG@k) for each benchmark dataset.  <strong>Key aspects to highlight would include ModernBERT&rsquo;s performance relative to other encoder-only models</strong>, as well as its comparison to larger, decoder-only models like LLMs, emphasizing its efficiency advantages.  The results should be carefully analyzed to showcase the model&rsquo;s strengths and weaknesses.  <strong>Particular attention should be given to ModernBERT&rsquo;s performance on long-context tasks</strong>,  as this is a major contribution.  A discussion explaining any unexpected results or outliers is necessary.  Ultimately, the benchmark results should convincingly demonstrate ModernBERT&rsquo;s improved performance and efficiency compared to competitors, solidifying its position as a significant advancement in encoder-only models.  Visualizations, such as bar charts or tables, are necessary to effectively communicate the findings.</p>
+
+
+<h4 class="relative group">Future Research 
+    <div id="future-research" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#future-research" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
+<p>Future research directions stemming from this work could explore several promising avenues.  <strong>Extending the model&rsquo;s multilingual capabilities</strong> is crucial, as the current focus on English limits broader applicability.  Investigating the impact of different training objectives, such as incorporating RTD alongside MLM, warrants further study to optimize performance across various downstream tasks.  <strong>Scaling experiments</strong> should explore the effects of increasing model size and parameter count on performance and efficiency, pushing the boundaries of encoder-only model capabilities.  Finally, a <strong>thorough investigation into the phenomenon observed in long-context retrieval</strong> is essential.  The unexpected performance gap between ModernBERT and GTE-en-MLM in out-of-domain scenarios suggests underlying factors that require deeper analysis and potential architectural refinements.  This would involve focusing on aspects like the interaction between local and global attention and the model&rsquo;s adaptation to various data distributions and contexts.</p>
+
+
+<h4 class="relative group">Study Limitations 
+    <div id="study-limitations" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#study-limitations" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
+<p>The study&rsquo;s limitations section would critically examine the scope and generalizability of the research findings.  <strong>Language limitations</strong> would be a major point, acknowledging the focus on English and the potential for different results in other languages, particularly resource-constrained ones.  The reliance on web data for training raises concerns about inherent <strong>biases</strong> and the presence of harmful content.  The methodology&rsquo;s use of a masked language modeling (MLM) objective as the sole training approach warrants attention, as it might limit the model&rsquo;s ability to excel in certain tasks, especially those needing generation or other capabilities.  <strong>Scaling limitations</strong> in terms of data size and model parameters need to be addressed.   The study could also mention limitations arising from specific datasets used, potential overfitting, and the need for future research to expand the findings to different domains and tasks.</p>
+
+
+<h3 class="relative group">More visual insights 
+    <div id="more-visual-insights" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#more-visual-insights" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<!-- raw HTML omitted -->
+<div class="table-caption">
+  | MLDR<!-- raw HTML omitted -->OOD<!-- raw HTML omitted --> |
+</div>
+
+
+<blockquote>
+<p>🔼 This table presents a comprehensive comparison of the memory usage and inference speed of various encoder-only models.  The results were obtained using an NVIDIA RTX 4090 GPU, averaging over 10 runs for each model.  Memory efficiency is represented by the maximum batch size (BS) that can be processed. Inference speed is measured in thousands of tokens processed per second.  The table also indicates where configurations were not supported.</p>
+<!-- raw HTML omitted -->
+</blockquote>
+<div class="table-caption">
+  <table>
+  <thead>
+      <tr>
+          <th>MLDR<!-- raw HTML omitted -->ID<!-- raw HTML omitted --></th>
+          <th></th>
+      </tr>
+  </thead>
+  <tbody>
+  </tbody>
+</table>
+
+</div>
+
+
+<blockquote>
+<p>🔼 This table details the hyperparameters and settings used during the training of the ModernBERT models.  It breaks down the training process into phases (pretraining, context extension phase one and two) for both the base and large versions of the model.  For each phase and model size, the table specifies training tokens, maximum sequence length, batch size, warmup tokens, learning rate, schedule type, total and training time, model initialization method, and dropout rates for different model layers.</p>
+<!-- raw HTML omitted -->
+</blockquote>
+<div class="table-caption">
+  <table>
+  <thead>
+      <tr>
+          <th>GLUE</th>
+          <th></th>
+      </tr>
+  </thead>
+  <tbody>
+  </tbody>
+</table>
+
+</div>
+
+
+<blockquote>
+<p>🔼 This table details the specific architectural design choices made for the two ModernBERT models: base and large.  It covers key hyperparameters and design decisions impacting performance and efficiency, such as the number of layers, hidden size, activation functions (GeLU), attention mechanisms (global and local), normalization type (LayerNorm), and the use of rotary positional embeddings (RoPE).  It also specifies the presence or absence of bias terms and other implementation details crucial to understanding the model&rsquo;s construction and the reasoning behind those choices.</p>
+<!-- raw HTML omitted -->
+</blockquote>
+<div class="table-caption">
+  <table>
+  <thead>
+      <tr>
+          <th>CSN</th>
+          <th></th>
+      </tr>
+  </thead>
+  <tbody>
+  </tbody>
+</table>
+
+</div>
+
+
+<blockquote>
+<p>🔼 This table presents the results of several encoder-only models on the GLUE benchmark, a widely used evaluation suite for natural language understanding tasks.  The results are broken down by model size (base and large), showing performance on various subtasks within the GLUE benchmark such as single sentence tasks (COLA, SST-2), paraphrase and similarity tasks (MRPC, STS-B, QQP), and natural language inference tasks (MNLI, QNLI, RTE).  Note that results for some models (indicated by Greek letters) were obtained from other papers and included for comparison.</p>
+<!-- raw HTML omitted -->
+</blockquote>
+<div class="table-caption">
+  <table>
+  <thead>
+      <tr>
+          <th>SQA</th>
+          <th></th>
+      </tr>
+  </thead>
+  <tbody>
+  </tbody>
+</table>
+
+</div>
+
+
+<blockquote>
+<p>🔼 This table shows the hyperparameters used for fine-tuning the ModernBERT model on the GLUE benchmark.  It lists the learning rate (LR), weight decay (WD), and number of epochs (Ep) used for each of the GLUE tasks.  The values were determined through hyperparameter searches to optimize performance on each specific task within the GLUE benchmark.</p>
+<!-- raw HTML omitted -->
+</blockquote>
+<div class="table-caption">
+  <table>
+  <thead>
+      <tr>
+          <th style="text-align: left"></th>
+          <th style="text-align: left"></th>
+          <th style="text-align: left">Params</th>
+          <th style="text-align: left">BS</th>
+          <th style="text-align: left">Fixed</th>
+          <th style="text-align: left">Variable</th>
+          <th style="text-align: left">BS</th>
+          <th style="text-align: left">Fixed</th>
+          <th style="text-align: left">Variable</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"></td>
+          <td style="text-align: left"></td>
+          <td style="text-align: left"></td>
+          <td style="text-align: left">Short</td>
+          <td style="text-align: left"></td>
+          <td style="text-align: left"></td>
+          <td style="text-align: left">Long</td>
+          <td style="text-align: left"></td>
+          <td style="text-align: left"></td>
+      </tr>
+      <tr>
+          <td style="text-align: left"></td>
+          <td style="text-align: left">Model</td>
+          <td style="text-align: left"></td>
+          <td style="text-align: left"></td>
+          <td style="text-align: left"></td>
+          <td style="text-align: left"></td>
+          <td style="text-align: left"></td>
+          <td style="text-align: left"></td>
+          <td style="text-align: left"></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Base</td>
+          <td style="text-align: left">BERT</td>
+          <td style="text-align: left">110M</td>
+          <td style="text-align: left">1096</td>
+          <td style="text-align: left"><strong>180.4</strong></td>
+          <td style="text-align: left">90.2</td>
+          <td style="text-align: left">–</td>
+          <td style="text-align: left">–</td>
+          <td style="text-align: left">–</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"></td>
+          <td style="text-align: left">RoBERTa</td>
+          <td style="text-align: left">125M</td>
+          <td style="text-align: left">664</td>
+          <td style="text-align: left">179.9</td>
+          <td style="text-align: left">89.9</td>
+          <td style="text-align: left">–</td>
+          <td style="text-align: left">–</td>
+          <td style="text-align: left">–</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"></td>
+          <td style="text-align: left">DeBERTaV3</td>
+          <td style="text-align: left">183M</td>
+          <td style="text-align: left">236</td>
+          <td style="text-align: left">70.2</td>
+          <td style="text-align: left">35.1</td>
+          <td style="text-align: left">–</td>
+          <td style="text-align: left">–</td>
+          <td style="text-align: left">–</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"></td>
+          <td style="text-align: left">NomicBERT</td>
+          <td style="text-align: left">137M</td>
+          <td style="text-align: left">588</td>
+          <td style="text-align: left">117.1</td>
+          <td style="text-align: left">58.5</td>
+          <td style="text-align: left">36</td>
+          <td style="text-align: left">46.1</td>
+          <td style="text-align: left">23.1</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"></td>
+          <td style="text-align: left">GTE-en-MLM</td>
+          <td style="text-align: left">137M</td>
+          <td style="text-align: left">640</td>
+          <td style="text-align: left">123.7</td>
+          <td style="text-align: left">61.8</td>
+          <td style="text-align: left">38</td>
+          <td style="text-align: left">46.8</td>
+          <td style="text-align: left">23.4</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"></td>
+          <td style="text-align: left">GTE-en-MLMxformers</td>
+          <td style="text-align: left">137M</td>
+          <td style="text-align: left">640</td>
+          <td style="text-align: left">122.5</td>
+          <td style="text-align: left">128.6</td>
+          <td style="text-align: left">38</td>
+          <td style="text-align: left">47.5</td>
+          <td style="text-align: left">67.3</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"></td>
+          <td style="text-align: left">ModernBERT</td>
+          <td style="text-align: left">149M</td>
+          <td style="text-align: left"><strong>1604</strong></td>
+          <td style="text-align: left">148.1</td>
+          <td style="text-align: left"><strong>147.3</strong></td>
+          <td style="text-align: left"><strong>98</strong></td>
+          <td style="text-align: left"><strong>123.7</strong></td>
+          <td style="text-align: left"><strong>133.8</strong></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Large</td>
+          <td style="text-align: left">BERT</td>
+          <td style="text-align: left">330M</td>
+          <td style="text-align: left"><strong>792</strong></td>
+          <td style="text-align: left"><strong>54.4</strong></td>
+          <td style="text-align: left">27.2</td>
+          <td style="text-align: left">–</td>
+          <td style="text-align: left">–</td>
+          <td style="text-align: left">–</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"></td>
+          <td style="text-align: left">RoBERTa</td>
+          <td style="text-align: left">355M</td>
+          <td style="text-align: left">460</td>
+          <td style="text-align: left">42.0</td>
+          <td style="text-align: left">21.0</td>
+          <td style="text-align: left">–</td>
+          <td style="text-align: left">–</td>
+          <td style="text-align: left">–</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"></td>
+          <td style="text-align: left">DeBERTaV3</td>
+          <td style="text-align: left">434M</td>
+          <td style="text-align: left">134</td>
+          <td style="text-align: left">24.6</td>
+          <td style="text-align: left">12.3</td>
+          <td style="text-align: left">–</td>
+          <td style="text-align: left">–</td>
+          <td style="text-align: left">–</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"></td>
+          <td style="text-align: left">GTE-en-MLM</td>
+          <td style="text-align: left">435M</td>
+          <td style="text-align: left">472</td>
+          <td style="text-align: left">38.7</td>
+          <td style="text-align: left">19.3</td>
+          <td style="text-align: left">28</td>
+          <td style="text-align: left">16.2</td>
+          <td style="text-align: left">8.1</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"></td>
+          <td style="text-align: left">GTE-en-MLMxformers</td>
+          <td style="text-align: left">435M</td>
+          <td style="text-align: left">472</td>
+          <td style="text-align: left">38.5</td>
+          <td style="text-align: left">40.4</td>
+          <td style="text-align: left">28</td>
+          <td style="text-align: left">16.5</td>
+          <td style="text-align: left">22.8</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"></td>
+          <td style="text-align: left">ModernBERT</td>
+          <td style="text-align: left">395M</td>
+          <td style="text-align: left">770</td>
+          <td style="text-align: left">52.3</td>
+          <td style="text-align: left"><strong>52.9</strong></td>
+          <td style="text-align: left"><strong>48</strong></td>
+          <td style="text-align: left"><strong>46.8</strong></td>
+          <td style="text-align: left"><strong>49.8</strong></td>
+      </tr>
+  </tbody>
+</table>
+
+</div>
+
+
+<blockquote>
+<p>🔼 This table presents the performance of various single-vector retrieval models on the BEIR benchmark (Thakur et al., 2021).  The BEIR benchmark is a comprehensive evaluation suite for information retrieval, encompassing a wide variety of tasks and domains. The nDCG@10 metric is used to assess the ranking quality of the retrieved documents for each dataset within BEIR.  Lower nDCG@10 scores suggest poorer retrieval performance.</p>
+<!-- raw HTML omitted -->
+</blockquote>
+<div class="table-caption">
+  <table>
+  <thead>
+      <tr>
+          <th style="text-align: left"></th>
+          <th style="text-align: left">Pretraining Phase</th>
+          <th style="text-align: left">Pretraining Phase</th>
+          <th style="text-align: left">Context Extension: Phase One</th>
+          <th style="text-align: left">Context Extension: Phase One</th>
+          <th style="text-align: left">Context Extension: Phase Two</th>
+          <th style="text-align: left">Context Extension: Phase Two</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"></td>
+          <td style="text-align: left">Base</td>
+          <td style="text-align: left">Large</td>
+          <td style="text-align: left">Base</td>
+          <td style="text-align: left">Large</td>
+          <td style="text-align: left">Base</td>
+          <td style="text-align: left">Large</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Training Tokens</td>
+          <td style="text-align: left">1.719 trillion</td>
+          <td style="text-align: left"></td>
+          <td style="text-align: left">250 billion</td>
+          <td style="text-align: left"></td>
+          <td style="text-align: left">50 billion</td>
+          <td style="text-align: left"></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Max Sequence Length</td>
+          <td style="text-align: left">1,024</td>
+          <td style="text-align: left"></td>
+          <td style="text-align: left">8,192</td>
+          <td style="text-align: left"></td>
+          <td style="text-align: left">8,192</td>
+          <td style="text-align: left"></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Batch Size</td>
+          <td style="text-align: left">4,608</td>
+          <td style="text-align: left">4,928</td>
+          <td style="text-align: left">72</td>
+          <td style="text-align: left">77</td>
+          <td style="text-align: left">72</td>
+          <td style="text-align: left">78</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Warmup (tokens)</td>
+          <td style="text-align: left">50 billion</td>
+          <td style="text-align: left">10 billion</td>
+          <td style="text-align: left">-</td>
+          <td style="text-align: left">-</td>
+          <td style="text-align: left">-</td>
+          <td style="text-align: left">-</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Microbatch Size</td>
+          <td style="text-align: left">96</td>
+          <td style="text-align: left">56</td>
+          <td style="text-align: left">12</td>
+          <td style="text-align: left">7</td>
+          <td style="text-align: left">12</td>
+          <td style="text-align: left">6</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Learning Rate</td>
+          <td style="text-align: left">8e-4</td>
+          <td style="text-align: left">5e-4, 5e-5</td>
+          <td style="text-align: left">3e-4</td>
+          <td style="text-align: left">5e-5</td>
+          <td style="text-align: left">3e-4</td>
+          <td style="text-align: left">5e-5</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Schedule</td>
+          <td style="text-align: left">Trapezoidal</td>
+          <td style="text-align: left"></td>
+          <td style="text-align: left">-</td>
+          <td style="text-align: left">-</td>
+          <td style="text-align: left">1-sqrt</td>
+          <td style="text-align: left"></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Warmup (tokens)</td>
+          <td style="text-align: left">3 billion</td>
+          <td style="text-align: left">2 billion</td>
+          <td style="text-align: left">-</td>
+          <td style="text-align: left">-</td>
+          <td style="text-align: left">-</td>
+          <td style="text-align: left">-</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Decay (tokens)</td>
+          <td style="text-align: left">-</td>
+          <td style="text-align: left">-</td>
+          <td style="text-align: left">-</td>
+          <td style="text-align: left">-</td>
+          <td style="text-align: left">50 billion</td>
+          <td style="text-align: left"></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Weight Decay</td>
+          <td style="text-align: left">1e-5</td>
+          <td style="text-align: left">1e-5, 1e-6</td>
+          <td style="text-align: left">1e-5</td>
+          <td style="text-align: left">1e-6</td>
+          <td style="text-align: left">1e-5</td>
+          <td style="text-align: left">1e-6</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Total Time (hours)</td>
+          <td style="text-align: left">194.2</td>
+          <td style="text-align: left">425.3</td>
+          <td style="text-align: left">39.9</td>
+          <td style="text-align: left">80.7</td>
+          <td style="text-align: left">11.5</td>
+          <td style="text-align: left">21.7</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Training Time (hours)</td>
+          <td style="text-align: left">191.1</td>
+          <td style="text-align: left">420.4</td>
+          <td style="text-align: left">36.3</td>
+          <td style="text-align: left">75.1</td>
+          <td style="text-align: left">7.5</td>
+          <td style="text-align: left">15.3</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Model Initialization</td>
+          <td style="text-align: left">Megatron</td>
+          <td style="text-align: left">From Base</td>
+          <td style="text-align: left">-</td>
+          <td style="text-align: left">-</td>
+          <td style="text-align: left">-</td>
+          <td style="text-align: left">-</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Dropout (attn out)</td>
+          <td style="text-align: left">0.1</td>
+          <td style="text-align: left"></td>
+          <td style="text-align: left"></td>
+          <td style="text-align: left"></td>
+          <td style="text-align: left"></td>
+          <td style="text-align: left"></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Dropout (all other layers)</td>
+          <td style="text-align: left">0.0</td>
+          <td style="text-align: left"></td>
+          <td style="text-align: left"></td>
+          <td style="text-align: left"></td>
+          <td style="text-align: left"></td>
+          <td style="text-align: left"></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Optimizer</td>
+          <td style="text-align: left">StableAdamW</td>
+          <td style="text-align: left"></td>
+          <td style="text-align: left"></td>
+          <td style="text-align: left"></td>
+          <td style="text-align: left"></td>
+          <td style="text-align: left"></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Betas</td>
+          <td style="text-align: left">(0.90, 0.98)</td>
+          <td style="text-align: left"></td>
+          <td style="text-align: left"></td>
+          <td style="text-align: left"></td>
+          <td style="text-align: left"></td>
+          <td style="text-align: left"></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Epsilon</td>
+          <td style="text-align: left">1e-06</td>
+          <td style="text-align: left"></td>
+          <td style="text-align: left"></td>
+          <td style="text-align: left"></td>
+          <td style="text-align: left"></td>
+          <td style="text-align: left"></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Training Hardware</td>
+          <td style="text-align: left">8x H100</td>
+          <td style="text-align: left"></td>
+          <td style="text-align: left"></td>
+          <td style="text-align: left"></td>
+          <td style="text-align: left"></td>
+          <td style="text-align: left"></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Training Strategy</td>
+          <td style="text-align: left">Distributed DataParallel</td>
+          <td style="text-align: left"></td>
+          <td style="text-align: left"></td>
+          <td style="text-align: left"></td>
+          <td style="text-align: left"></td>
+          <td style="text-align: left"></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Software Libraries</td>
+          <td style="text-align: left">PyTorch 2.4.0, Cuda 12.4.0, Composer 0.24.1, Flash Attention 2.6.3, FA3 commit 32792d3</td>
+          <td style="text-align: left"></td>
+          <td style="text-align: left"></td>
+          <td style="text-align: left"></td>
+          <td style="text-align: left"></td>
+          <td style="text-align: left"></td>
+      </tr>
+  </tbody>
+</table>
+
+</div>
+
+
+<blockquote>
+<p>🔼 This table presents the performance of various encoder models on the BEIR benchmark&rsquo;s multi-vector retrieval task, specifically measuring the normalized discounted cumulative gain (nDCG) at cutoff 10 (nDCG@10).  The BEIR benchmark is a widely used standard evaluation suite for information retrieval tasks, covering diverse domains and queries.  The nDCG@10 metric quantifies the ranking quality of the retrieved documents.  The table shows how effectively each model can retrieve relevant documents given a query using a multi-vector representation technique (where each document is represented by multiple vectors instead of a single vector).</p>
+<!-- raw HTML omitted -->
+</blockquote>
+<div class="table-caption">
+  <table>
+  <thead>
+      <tr>
+          <th>Feature</th>
+          <th>Base</th>
+          <th>Large</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Vocabulary</td>
+          <td>50,368</td>
+          <td>50,368</td>
+      </tr>
+      <tr>
+          <td>Unused Tokens</td>
+          <td>83</td>
+          <td>83</td>
+      </tr>
+      <tr>
+          <td>Layers</td>
+          <td>22</td>
+          <td>28</td>
+      </tr>
+      <tr>
+          <td>Hidden Size</td>
+          <td>768</td>
+          <td>1024</td>
+      </tr>
+      <tr>
+          <td>Transformer Block</td>
+          <td>Pre-Norm</td>
+          <td>Pre-Norm</td>
+      </tr>
+      <tr>
+          <td>Activation Function</td>
+          <td>GeLU</td>
+          <td>GeLU</td>
+      </tr>
+      <tr>
+          <td>Linear Bias</td>
+          <td>False</td>
+          <td>False</td>
+      </tr>
+      <tr>
+          <td>Attention</td>
+          <td>Multi-head</td>
+          <td>Multi-head</td>
+      </tr>
+      <tr>
+          <td>Attention Heads</td>
+          <td>12</td>
+          <td>16</td>
+      </tr>
+      <tr>
+          <td>Global Attention</td>
+          <td>Every three layers</td>
+          <td>Every three layers</td>
+      </tr>
+      <tr>
+          <td>Local Attention Window</td>
+          <td>128</td>
+          <td>128</td>
+      </tr>
+      <tr>
+          <td>Intermediate Size</td>
+          <td>1,152</td>
+          <td>2,624</td>
+      </tr>
+      <tr>
+          <td>GLU Expansion</td>
+          <td>2,304</td>
+          <td>5,248</td>
+      </tr>
+      <tr>
+          <td>Normalization</td>
+          <td>LayerNorm</td>
+          <td>LayerNorm</td>
+      </tr>
+      <tr>
+          <td>Norm Epsilon</td>
+          <td>1e-5</td>
+          <td>1e-5</td>
+      </tr>
+      <tr>
+          <td>Norm Bias</td>
+          <td>False</td>
+          <td>False</td>
+      </tr>
+      <tr>
+          <td>RoPE theta</td>
+          <td>160,000</td>
+          <td>160,000</td>
+      </tr>
+      <tr>
+          <td>Local Attn RoPE theta</td>
+          <td>10,000</td>
+          <td>10,000</td>
+      </tr>
+  </tbody>
+</table>
+
+</div>
+
+
+<blockquote>
+<p>🔼 This table shows the optimal learning rates used for fine-tuning different encoder models on the BEIR benchmark.  It breaks down the results by two retrieval methods: single-vector and multi-vector retrieval.  The table helps demonstrate the different hyperparameter settings needed to achieve optimal performance for various models in different retrieval scenarios.</p>
+<!-- raw HTML omitted -->
+</blockquote>
+<div class="table-caption">
+  <table>
+  <thead>
+      <tr>
+          <th style="text-align: left"></th>
+          <th style="text-align: left">Model</th>
+          <th style="text-align: left">Params</th>
+          <th style="text-align: left">Seq.</th>
+          <th style="text-align: left">CoLA</th>
+          <th style="text-align: left">SST-2</th>
+          <th style="text-align: left">MRPC</th>
+          <th style="text-align: left">STS-B</th>
+          <th style="text-align: left">QQP</th>
+          <th style="text-align: left">MNLI</th>
+          <th style="text-align: left">QNLI</th>
+          <th style="text-align: left">RTE</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><strong>Base</strong></td>
+          <td style="text-align: left">BERT<!-- raw HTML omitted -->β<!-- raw HTML omitted --></td>
+          <td style="text-align: left">110M</td>
+          <td style="text-align: left">512</td>
+          <td style="text-align: left">59.0</td>
+          <td style="text-align: left">93.1</td>
+          <td style="text-align: left">89.5</td>
+          <td style="text-align: left">89.4</td>
+          <td style="text-align: left">91.4</td>
+          <td style="text-align: left">85.4</td>
+          <td style="text-align: left">91.6</td>
+          <td style="text-align: left">78.2</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"></td>
+          <td style="text-align: left">RoBERTa<!-- raw HTML omitted -->α<!-- raw HTML omitted --></td>
+          <td style="text-align: left">125M</td>
+          <td style="text-align: left">512</td>
+          <td style="text-align: left">63.6</td>
+          <td style="text-align: left">94.8</td>
+          <td style="text-align: left">90.2</td>
+          <td style="text-align: left">91.2</td>
+          <td style="text-align: left">91.9</td>
+          <td style="text-align: left">87.6</td>
+          <td style="text-align: left">92.8</td>
+          <td style="text-align: left">78.7</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"></td>
+          <td style="text-align: left">DeBERTav3<!-- raw HTML omitted -->ϵ<!-- raw HTML omitted --></td>
+          <td style="text-align: left">183M</td>
+          <td style="text-align: left">512</td>
+          <td style="text-align: left"><strong>69.2</strong></td>
+          <td style="text-align: left">95.6</td>
+          <td style="text-align: left">89.5</td>
+          <td style="text-align: left">91.6</td>
+          <td style="text-align: left"><strong>92.4</strong></td>
+          <td style="text-align: left"><strong>90.0</strong></td>
+          <td style="text-align: left">83.8</td>
+          <td style="text-align: left"></td>
+      </tr>
+      <tr>
+          <td style="text-align: left"></td>
+          <td style="text-align: left">MosaicBERT-128<!-- raw HTML omitted -->β<!-- raw HTML omitted --></td>
+          <td style="text-align: left">137M</td>
+          <td style="text-align: left">128</td>
+          <td style="text-align: left">58.2</td>
+          <td style="text-align: left">93.5</td>
+          <td style="text-align: left">89.0</td>
+          <td style="text-align: left">90.3</td>
+          <td style="text-align: left">92.0</td>
+          <td style="text-align: left">85.6</td>
+          <td style="text-align: left">91.4</td>
+          <td style="text-align: left">83.0</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"></td>
+          <td style="text-align: left">NomicBERT-2048<!-- raw HTML omitted -->γ<!-- raw HTML omitted --></td>
+          <td style="text-align: left">137M</td>
+          <td style="text-align: left">2048</td>
+          <td style="text-align: left">50.0</td>
+          <td style="text-align: left">93.0</td>
+          <td style="text-align: left">88.0</td>
+          <td style="text-align: left">90.0</td>
+          <td style="text-align: left">92.0</td>
+          <td style="text-align: left">86.0</td>
+          <td style="text-align: left">92.0</td>
+          <td style="text-align: left">82.0</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"></td>
+          <td style="text-align: left">GTE-en-MLM<!-- raw HTML omitted -->δ<!-- raw HTML omitted --></td>
+          <td style="text-align: left">137M</td>
+          <td style="text-align: left">8192</td>
+          <td style="text-align: left">57.0</td>
+          <td style="text-align: left">93.4</td>
+          <td style="text-align: left">92.1</td>
+          <td style="text-align: left">88.8</td>
+          <td style="text-align: left">86.7</td>
+          <td style="text-align: left">91.9</td>
+          <td style="text-align: left">84.8</td>
+          <td style="text-align: left"></td>
+      </tr>
+      <tr>
+          <td style="text-align: left"></td>
+          <td style="text-align: left">ModernBERT</td>
+          <td style="text-align: left">149M</td>
+          <td style="text-align: left">8192</td>
+          <td style="text-align: left"><strong>96.0</strong></td>
+          <td style="text-align: left"><strong>92.2</strong></td>
+          <td style="text-align: left"><strong>91.8</strong></td>
+          <td style="text-align: left">92.1</td>
+          <td style="text-align: left">89.1</td>
+          <td style="text-align: left"><strong>93.9</strong></td>
+          <td style="text-align: left"><strong>87.4</strong></td>
+          <td style="text-align: left"></td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Large</strong></td>
+          <td style="text-align: left">BERT<!-- raw HTML omitted -->β<!-- raw HTML omitted --></td>
+          <td style="text-align: left">330M</td>
+          <td style="text-align: left">512</td>
+          <td style="text-align: left">56.2</td>
+          <td style="text-align: left">93.3</td>
+          <td style="text-align: left">87.8</td>
+          <td style="text-align: left">90.6</td>
+          <td style="text-align: left">90.9</td>
+          <td style="text-align: left">86.3</td>
+          <td style="text-align: left">92.8</td>
+          <td style="text-align: left">83.8</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"></td>
+          <td style="text-align: left">RoBERTa<!-- raw HTML omitted -->α<!-- raw HTML omitted --></td>
+          <td style="text-align: left">355M</td>
+          <td style="text-align: left">512</td>
+          <td style="text-align: left">68.0</td>
+          <td style="text-align: left">96.4</td>
+          <td style="text-align: left">90.9</td>
+          <td style="text-align: left">92.2</td>
+          <td style="text-align: left">90.2</td>
+          <td style="text-align: left">94.7</td>
+          <td style="text-align: left">86.6</td>
+          <td style="text-align: left"></td>
+      </tr>
+      <tr>
+          <td style="text-align: left"></td>
+          <td style="text-align: left">DeBERTav3<!-- raw HTML omitted -->ζ<!-- raw HTML omitted --></td>
+          <td style="text-align: left">434M</td>
+          <td style="text-align: left">512</td>
+          <td style="text-align: left"><strong>75.3</strong></td>
+          <td style="text-align: left">96.9</td>
+          <td style="text-align: left">92.2</td>
+          <td style="text-align: left"><strong>93.3</strong></td>
+          <td style="text-align: left"><strong>91.8</strong></td>
+          <td style="text-align: left"><strong>96.0</strong></td>
+          <td style="text-align: left"><strong>92.7</strong></td>
+          <td style="text-align: left"></td>
+      </tr>
+      <tr>
+          <td style="text-align: left"></td>
+          <td style="text-align: left">GTE-en-MLM<!-- raw HTML omitted -->δ<!-- raw HTML omitted --></td>
+          <td style="text-align: left">434M</td>
+          <td style="text-align: left">8192</td>
+          <td style="text-align: left">60.4</td>
+          <td style="text-align: left"><strong>93.5</strong></td>
+          <td style="text-align: left">91.4</td>
+          <td style="text-align: left">89.2</td>
+          <td style="text-align: left">89.2</td>
+          <td style="text-align: left"><strong>93.9</strong></td>
+          <td style="text-align: left">88.1</td>
+          <td style="text-align: left"></td>
+      </tr>
+      <tr>
+          <td style="text-align: left"></td>
+          <td style="text-align: left">ModernBERT</td>
+          <td style="text-align: left">395M</td>
+          <td style="text-align: left">8192</td>
+          <td style="text-align: left"><strong>97.1</strong></td>
+          <td style="text-align: left">91.7</td>
+          <td style="text-align: left">92.8</td>
+          <td style="text-align: left">92.7</td>
+          <td style="text-align: left">90.8</td>
+          <td style="text-align: left">95.2</td>
+          <td style="text-align: left">92.1</td>
+          <td></td>
+      </tr>
+  </tbody>
+</table>
+
+</div>
+
+
+<blockquote>
+<p>🔼 This table presents statistics of four synthetic datasets created for evaluating the inference efficiency of different models.  Each dataset contains 8192 documents, but differs in the distribution of token lengths within each document.  The first two datasets, &lsquo;Fixed Short&rsquo; and &lsquo;Fixed Long&rsquo;, have uniform token lengths of 512 and 8192 tokens per document, respectively.  The other two, &lsquo;Variable Short&rsquo; and &lsquo;Variable Long&rsquo;, feature token lengths that follow a normal distribution centered at 256 and 4096 tokens, respectively, to simulate real-world scenarios where document lengths vary.</p>
+<!-- raw HTML omitted -->
+</blockquote>
+<div class="table-caption">
+  <table>
+  <thead>
+      <tr>
+          <th>Task</th>
+          <th>Base LR</th>
+          <th>Base WD</th>
+          <th>Base Ep</th>
+          <th>Large LR</th>
+          <th>Large WD</th>
+          <th>Large Ep</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>CoLA</td>
+          <td>8e-5</td>
+          <td>1e-6</td>
+          <td>5</td>
+          <td>3e-5</td>
+          <td>8e-6</td>
+          <td>5</td>
+      </tr>
+      <tr>
+          <td>MNLI</td>
+          <td>5e-5</td>
+          <td>5e-6</td>
+          <td>1</td>
+          <td>3e-5</td>
+          <td>1e-5</td>
+          <td>1</td>
+      </tr>
+      <tr>
+          <td>MRPC</td>
+          <td>5e-5</td>
+          <td>5e-6</td>
+          <td>10</td>
+          <td>8e-5</td>
+          <td>5e-6</td>
+          <td>2</td>
+      </tr>
+      <tr>
+          <td>QNLI</td>
+          <td>8e-5</td>
+          <td>5e-6</td>
+          <td>2</td>
+          <td>3e-5</td>
+          <td>5e-6</td>
+          <td>2</td>
+      </tr>
+      <tr>
+          <td>QQP</td>
+          <td>5e-5</td>
+          <td>5e-6</td>
+          <td>10</td>
+          <td>5e-5</td>
+          <td>8e-6</td>
+          <td>2</td>
+      </tr>
+      <tr>
+          <td>RTE</td>
+          <td>5e-5</td>
+          <td>1e-5</td>
+          <td>3</td>
+          <td>5e-5</td>
+          <td>8e-6</td>
+          <td>3</td>
+      </tr>
+      <tr>
+          <td>SST-2</td>
+          <td>8e-5</td>
+          <td>1e-5</td>
+          <td>2</td>
+          <td>1e-5</td>
+          <td>1e-6</td>
+          <td>3</td>
+      </tr>
+      <tr>
+          <td>STSB</td>
+          <td>8e-5</td>
+          <td>5e-6</td>
+          <td>10</td>
+          <td>8e-5</td>
+          <td>1e-5</td>
+          <td>10</td>
+      </tr>
+  </tbody>
+</table>
+
+</div>
+
+
+<blockquote>
+<p>🔼 This table presents the inference speed (tokens per second) of different encoder-only models, including ModernBERT, on various sequence lengths.  The results are broken down by model size (base and large), batch size (fixed and variable-length sequences), and sequence length (short and long).  Bold values indicate the fastest inference speed within two standard deviations of the best result for that category.</p>
+<!-- raw HTML omitted -->
+</blockquote>
+<!-- raw HTML omitted -->
+
+
+<h3 class="relative group">Full paper 
+    <div id="full-paper" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#full-paper" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+
+
+<div id="gallery-d3b1982e8ff194919cb2e44232706297" class="gallery">
+  
+<img src="paper_images/1.png" class="grid-w50 md:grid-w33 xl:grid-w25" />
+<img src="paper_images/2.png" class="grid-w50 md:grid-w33 xl:grid-w25" />
+<img src="paper_images/3.png" class="grid-w50 md:grid-w33 xl:grid-w25" />
+<img src="paper_images/4.png" class="grid-w50 md:grid-w33 xl:grid-w25" />
+<img src="paper_images/5.png" class="grid-w50 md:grid-w33 xl:grid-w25" />
+<img src="paper_images/6.png" class="grid-w50 md:grid-w33 xl:grid-w25" />
+<img src="paper_images/7.png" class="grid-w50 md:grid-w33 xl:grid-w25" />
+<img src="paper_images/8.png" class="grid-w50 md:grid-w33 xl:grid-w25" />
+<img src="paper_images/9.png" class="grid-w50 md:grid-w33 xl:grid-w25" />
+<img src="paper_images/10.png" class="grid-w50 md:grid-w33 xl:grid-w25" />
+<img src="paper_images/11.png" class="grid-w50 md:grid-w33 xl:grid-w25" />
+<img src="paper_images/12.png" class="grid-w50 md:grid-w33 xl:grid-w25" />
+<img src="paper_images/13.png" class="grid-w50 md:grid-w33 xl:grid-w25" />
+<img src="paper_images/14.png" class="grid-w50 md:grid-w33 xl:grid-w25" />
+<img src="paper_images/15.png" class="grid-w50 md:grid-w33 xl:grid-w25" />
+<img src="paper_images/16.png" class="grid-w50 md:grid-w33 xl:grid-w25" />
+<img src="paper_images/17.png" class="grid-w50 md:grid-w33 xl:grid-w25" />
+<img src="paper_images/18.png" class="grid-w50 md:grid-w33 xl:grid-w25" />
+<img src="paper_images/19.png" class="grid-w50 md:grid-w33 xl:grid-w25" />
+<img src="paper_images/20.png" class="grid-w50 md:grid-w33 xl:grid-w25" />
+
+</div>
+
+          
+          
+          
+        </div>
+        
+        
+
+        
+        
+
+          
+      </div>
+     
+      
+      
+        
+        
+          
+          
+        
+      <script>
+        var oid = "views_2412.13663\/index.md"
+        var oid_likes = "likes_2412.13663\/index.md"
+      </script>
+      
+      
+      <script type="text/javascript" src="/js/page.min.0860cf4e04fa2d72cc33ddba263083464d48f67de06114529043cb4623319efed4f484fd7f1730df5abea0e2da6f3538855634081d02f2d6e920b956f063e823.js" integrity="sha512-CGDPTgT6LXLMM926JjCDRk1I9n3gYRRSkEPLRiMxnv7U9IT9fxcw31q&#43;oOLabzU4hVY0CB0C8tbpILlW8GPoIw=="></script>
+      
+  
+    </section>
+  <footer class="pt-8 max-w-prose print:hidden">
+
+    
+  
+    
+    
+    
+    <div class="pt-8">
+      <hr class="border-dotted border-neutral-300 dark:border-neutral-600" />
+      <div class="flex justify-between pt-3">
+        <span>
+          
+            <a class="flex group mr-3" href="/2407.11418/">
+              <span
+                class="mr-3 text-neutral-700 group-hover:text-primary-600 ltr:inline rtl:hidden dark:text-neutral dark:group-hover:text-primary-400"
+                >&larr;</span
+              >
+              <span
+                class="ml-3 text-neutral-700 group-hover:text-primary-600 ltr:hidden rtl:inline dark:text-neutral dark:group-hover:text-primary-400"
+                >&rarr;</span
+              >
+              <span class="flex flex-col">
+                <span
+                  class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
+                  >Semantic Operators: A Declarative Model for Rich, AI-based Analytics Over Text Data</span
+                >
+                <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
+                  
+                    <time datetime="2024-07-16T00:00:00&#43;00:00">July 16, 2024</time>
+                  
+                </span>
+              </span>
+            </a>
+          
+        </span>
+        <span>
+          
+        </span>
+      </div>
+    </div>
+  
+
+
+    
+  </footer>
+</article>
+
+      <div id="top-scroller" class="pointer-events-none absolute top-[110vh] bottom-0 w-12 ltr:right-0 rtl:left-0">
+  <a href="#the-top"
+    class="pointer-events-auto sticky top-[calc(100vh-5.5rem)] flex h-12 w-12 mb-16 items-center justify-center rounded-full bg-neutral/50 text-xl text-neutral-700 hover:text-primary-600 dark:bg-neutral-800/50 dark:text-neutral dark:hover:text-primary-400"
+    aria-label="Scroll to top" title="Scroll to top">
+    &uarr;
+  </a>
+</div>
+    </main><footer id="site-footer" class="py-10 print:hidden">
+  
+  
+    
+  
+  <div class="flex items-center justify-between">
+
+    
+    
+    <p class="text-sm text-neutral-500 dark:text-neutral-400">
+      &copy;
+      2025
+      
+    </p>
+    
+
+    
+    
+    <p class="text-xs text-neutral-500 dark:text-neutral-400">
+      
+      
+      Powered by <a class="hover:underline hover:decoration-primary-400 hover:text-primary-500"
+        href="https://gohugo.io/" target="_blank" rel="noopener noreferrer">Hugo</a> &amp; <a class="hover:underline hover:decoration-primary-400 hover:text-primary-500"
+        href="https://blowfish.page/" target="_blank" rel="noopener noreferrer">Blowfish</a>
+    </p>
+    
+
+  </div>
+  <script>
+    
+    mediumZoom(document.querySelectorAll("img:not(.nozoom)"), {
+      margin: 24,
+      background: 'rgba(0,0,0,0.5)',
+      scrollOffset: 0,
+    })
+    
+  </script>
+  
+  
+  <script type="text/javascript" src="/js/process.min.ee03488f19c93c2efb199e2e3014ea5f3cb2ce7d45154adb3399a158cac27ca52831db249ede5bb602700ef87eb02434139de0858af1818ab0fb4182472204a4.js" integrity="sha512-7gNIjxnJPC77GZ4uMBTqXzyyzn1FFUrbM5mhWMrCfKUoMdsknt5btgJwDvh&#43;sCQ0E53ghYrxgYqw&#43;0GCRyIEpA=="></script>
+  
+  
+</footer>
+<div
+  id="search-wrapper"
+  class="invisible fixed inset-0 flex h-screen w-screen cursor-default flex-col bg-neutral-500/50 p-4 backdrop-blur-sm dark:bg-neutral-900/50 sm:p-6 md:p-[10vh] lg:p-[12vh]"
+  data-url="http://localhost:6006/"
+  style="z-index:500"
+>
+  <div
+    id="search-modal"
+    class="flex flex-col w-full max-w-3xl min-h-0 mx-auto border rounded-md shadow-lg top-20 border-neutral-200 bg-neutral dark:border-neutral-700 dark:bg-neutral-800"
+  >
+    <header class="relative z-10 flex items-center justify-between flex-none px-2">
+      <form class="flex items-center flex-auto min-w-0">
+        <div class="flex items-center justify-center w-8 h-8 text-neutral-400">
+          
+
+  <span class="relative block icon">
+    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+
+  </span>
+
+
+        </div>
+        <input
+          type="search"
+          id="search-query"
+          class="flex flex-auto h-12 mx-1 bg-transparent appearance-none focus:outline-dotted focus:outline-2 focus:outline-transparent"
+          placeholder="Search"
+          tabindex="0"
+        />
+      </form>
+      <button
+        id="close-search-button"
+        class="flex items-center justify-center w-8 h-8 text-neutral-700 hover:text-primary-600 dark:text-neutral dark:hover:text-primary-400"
+        title="Close (Esc)"
+      >
+        
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z"/></svg>
+
+  </span>
+
+
+      </button>
+    </header>
+    <section class="flex-auto px-2 overflow-auto">
+      <ul id="search-results">
+        
+      </ul>
+    </section>
+  </div>
+</div>
+
+  </div>
+</body>
+
+</html>

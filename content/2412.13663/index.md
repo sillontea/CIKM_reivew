@@ -46,15 +46,15 @@ This research introduces ModernBERT, a novel encoder-only model addressing these
 #### Key Takeaways
 
 {{< alert "star" >}}
-{{< typeit speed=10 lifeLike=true >}} ModernBERT significantly improves speed and memory efficiency compared to existing encoder-only models. {{< /typeit >}}
+ModernBERT significantly improves speed and memory efficiency compared to existing encoder-only models.
 {{< /alert >}}
 
 {{< alert "star" >}}
-{{< typeit speed=10 startDelay=1000 lifeLike=true >}} ModernBERT achieves state-of-the-art results on various NLP tasks, including classification and retrieval, with an extended 8192 token context length. {{< /typeit >}}
+ModernBERT achieves state-of-the-art results on various NLP tasks, including classification and retrieval, with an extended 8192 token context length.
 {{< /alert >}}
 
 {{< alert "star" >}}
-{{< typeit speed=10 startDelay=2000 lifeLike=true >}} ModernBERT's modular design and released codebase facilitate further research and experimentation in encoder-only models. {{< /typeit >}}
+ModernBERT's modular design and released codebase facilitate further research and experimentation in encoder-only models.
 {{< /alert >}}
 
 #### Why does it matter?
