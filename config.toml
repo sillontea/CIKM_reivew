@@ -1,5 +1,17 @@
-baseURL = "http://localhost:8895/"
+baseURL = "http://localhost:6006/"
 languageCode = "en-us"
 title = "CIKM Paper Reviewer"
 theme = "blowfish"
 
+
+[params.homepage]
+layout = "background"
+showRecent = true
+showRecentItems = 5
+cardView = true
+
+[server]
+bind = "0.0.0.0"
+port = 6006
+
+ignoreLogs = ["warning-goldmark-raw-html"]

@@ -1,27 +1,22 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Ai Generated on My New Hugo Site</title>
-    <link>http://example.org/categories/ai-generated/</link>
-    <description>Recent content in Ai Generated on My New Hugo Site</description>
+    <title>AI Generated on CIKM Paper Reviewer</title>
+    <link>http://localhost:1313/categories/ai-generated/</link>
+    <description>Recent content in AI Generated on CIKM Paper Reviewer</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 16 Jul 2024 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="http://example.org/categories/ai-generated/index.xml" rel="self" type="application/rss+xml" />
-    
+    <copyright>© 2025 </copyright>
+    <lastBuildDate>Tue, 16 Jul 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/categories/ai-generated/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Semantic Operators: A Declarative Model for Rich, AI-based Analytics Over Text Data</title>
-      <link>http://example.org/2407.11418/</link>
+      <link>http://localhost:1313/2407.11418/</link>
       <pubDate>Tue, 16 Jul 2024 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/2407.11418/</guid>
-      <description>{{&amp;lt; keywordList &amp;gt;}} {{&amp;lt; keyword icon=&amp;ldquo;fingerprint&amp;rdquo; &amp;gt;}} 2407.11418 {{&amp;lt; /keyword &amp;gt;}} {{&amp;lt; keyword icon=&amp;ldquo;writer&amp;rdquo; &amp;gt;}} Liana Patel et el. {{&amp;lt; /keyword &amp;gt;}}
-{{&amp;lt; /keywordList &amp;gt;}}
-{{&amp;lt; button href=&amp;ldquo;https://arxiv.org/abs/2407.11418&amp;quot; target=&amp;rdquo;_self&amp;rdquo; &amp;gt;}} ↗ arXiv {{&amp;lt; /button &amp;gt;}} {{&amp;lt; button href=&amp;ldquo;https://huggingface.co/papers/2407.11418&amp;quot; target=&amp;rdquo;_self&amp;rdquo; &amp;gt;}} ↗ Hugging Face {{&amp;lt; /button &amp;gt;}} {{&amp;lt; button href=&amp;ldquo;https://paperswithcode.com/paper/lotus-enabling-semantic-queries-with-llms&amp;quot; target=&amp;rdquo;_self&amp;rdquo; &amp;gt;}} ↗ Papers with Code {{&amp;lt; /button &amp;gt;}}
-TL;DR {{&amp;lt; lead &amp;gt;}}
-Current systems lack high-level abstractions for performing bulk semantic queries on large text datasets.</description>
+      <guid>http://localhost:1313/2407.11418/</guid>
+      <description>LOTUS uses novel &amp;lsquo;semantic operators&amp;rsquo; to enable declarative, AI-powered analytics over text data, achieving up to 400x speedups and exceeding state-of-the-art accuracy.</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/2407.11418/cover.png" />
     </item>
     
   </channel>
