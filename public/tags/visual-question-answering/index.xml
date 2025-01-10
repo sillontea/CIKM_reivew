@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Visual Question Answering on CIKM Paper Reviewer</title>
+    <link>http://localhost:6006/tags/visual-question-answering/</link>
+    <description>Recent content in Visual Question Answering on CIKM Paper Reviewer</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>© 2025 </copyright>
+    <lastBuildDate>Thu, 09 Jan 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:6006/tags/visual-question-answering/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>ReFocus: Visual Editing as a Chain of Thought for Structured Image Understanding</title>
+      <link>http://localhost:6006/2501.05452/</link>
+      <pubDate>Thu, 09 Jan 2025 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:6006/2501.05452/</guid>
+      <description>REFOCUS: boosting multimodal LLMs&amp;rsquo; structured image understanding via visual chain-of-thought!</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:6006/2501.05452/cover.png" />
+    </item>
+    
+  </channel>
+</rss>

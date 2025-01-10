@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>🏢 Answer.AI on CIKM Paper Reviewer</title>
+    <link>http://localhost:6006/tags/-answer.ai/</link>
+    <description>Recent content in 🏢 Answer.AI on CIKM Paper Reviewer</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>© 2025 </copyright>
+    <lastBuildDate>Wed, 18 Dec 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:6006/tags/-answer.ai/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Smarter, Better, Faster, Longer: A Modern Bidirectional Encoder for Fast, Memory Efficient, and Long Context Finetuning and Inference</title>
+      <link>http://localhost:6006/2412.13663/</link>
+      <pubDate>Wed, 18 Dec 2024 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:6006/2412.13663/</guid>
+      <description>ModernBERT: Blazing-fast, memory-efficient encoder-only transformer model achieving state-of-the-art performance on diverse tasks with 8192 sequence length.</description>
+      
+    </item>
+    
+  </channel>
+</rss>

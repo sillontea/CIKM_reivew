@@ -1,0 +1,1595 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr" class="scroll-smooth" data-default-appearance="light"
+  data-auto-appearance="true"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=6006&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8" />
+  
+  <meta http-equiv="content-language" content="en-us" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  
+  <title>ReFocus: Visual Editing as a Chain of Thought for Structured Image Understanding &middot; CIKM Paper Reviewer</title>
+  <meta name="title" content="ReFocus: Visual Editing as a Chain of Thought for Structured Image Understanding &middot; CIKM Paper Reviewer" />
+  
+  <meta name="description" content="REFOCUS: boosting multimodal LLMs&#39; structured image understanding via visual chain-of-thought!" />
+  <meta name="keywords" content="Computer Vision, Visual Question Answering, 🏢 University of Pennsylvania, " />
+  
+  
+  <link rel="canonical" href="http://localhost:6006/2501.05452/" />
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <link type="text/css" rel="stylesheet" href="/css/main.bundle.min.e27868ab1485f7ed7b06b122b4980bd38b19526eb8f7de885181204d28f04a0c47e9c334eff19a06c0278eb2ff8415b983a5d0fb80fd6b5680c926457cc61c57.css"
+    integrity="sha512-4nhoqxSF9&#43;17BrEitJgL04sZUm64996IUYEgTSjwSgxH6cM07/GaBsAnjrL/hBW5g6XQ&#43;4D9a1aAySZFfMYcVw==" />
+  
+  
+  <script type="text/javascript" src="/js/appearance.min.516a16745bea5a9bd011138d254cc0fd3973cd55ce6e15f3dec763e7c7c2c7448f8fe7b54cca811cb821b0c7e12cd161caace1dd794ac3d34d40937cbcc9ee12.js"
+    integrity="sha512-UWoWdFvqWpvQERONJUzA/TlzzVXObhXz3sdj58fCx0SPj&#43;e1TMqBHLghsMfhLNFhyqzh3XlKw9NNQJN8vMnuEg=="></script>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <script defer type="text/javascript" id="script-bundle" src="/js/main.bundle.min.c178288131a2f1ad46910438db47ac5f7e1c48cf949e49f6dc3310c8ec9660e23fe505805eba4e2e73711335808500360d773a2b64322feb35df52856edca286.js"
+    integrity="sha512-wXgogTGi8a1GkQQ420esX34cSM&#43;Unkn23DMQyOyWYOI/5QWAXrpOLnNxEzWAhQA2DXc6K2QyL&#43;s131KFbtyihg==" data-copy="" data-copied=""></script>
+  
+  
+  
+  <script src="/lib/zoom/zoom.min.37d2094687372da3f7343a221a470f6b8806f7891aa46a5a03966af7f0ebd38b9fe536cb154e6ad28f006d184b294525a7c4054b6bbb4be62d8b453b42db99bd.js" integrity="sha512-N9IJRoc3LaP3NDoiGkcPa4gG94kapGpaA5Zq9/Dr04uf5TbLFU5q0o8AbRhLKUUlp8QFS2u7S&#43;Yti0U7QtuZvQ=="></script>
+  
+  
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  
+  
+  
+  
+  
+  
+  
+  
+  <meta property="og:url" content="http://localhost:6006/2501.05452/">
+  <meta property="og:site_name" content="CIKM Paper Reviewer">
+  <meta property="og:title" content="ReFocus: Visual Editing as a Chain of Thought for Structured Image Understanding">
+  <meta property="og:description" content="REFOCUS: boosting multimodal LLMs’ structured image understanding via visual chain-of-thought!">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:published_time" content="2025-01-09T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-01-09T00:00:00+00:00">
+    <meta property="article:tag" content="Computer Vision">
+    <meta property="article:tag" content="Visual Question Answering">
+    <meta property="article:tag" content="🏢 University of Pennsylvania">
+    <meta property="og:image" content="http://localhost:6006/2501.05452/cover.png">
+
+  
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="http://localhost:6006/2501.05452/cover.png">
+  <meta name="twitter:title" content="ReFocus: Visual Editing as a Chain of Thought for Structured Image Understanding">
+  <meta name="twitter:description" content="REFOCUS: boosting multimodal LLMs’ structured image understanding via visual chain-of-thought!">
+
+  
+  <script type="application/ld+json">
+  [{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "articleSection": "CIKM Paper Reviewer",
+    "name": "ReFocus: Visual Editing as a Chain of Thought for Structured Image Understanding",
+    "headline": "ReFocus: Visual Editing as a Chain of Thought for Structured Image Understanding",
+    
+    "abstract": "REFOCUS: boosting multimodal LLMs\u0026rsquo; structured image understanding via visual chain-of-thought!",
+    "inLanguage": "en-us",
+    "url" : "http:\/\/localhost:6006\/2501.05452\/",
+    "author" : {
+      "@type": "Person",
+      "name": ""
+    },
+    "copyrightYear": "2025",
+    "dateCreated": "2025-01-09T00:00:00\u002b00:00",
+    "datePublished": "2025-01-09T00:00:00\u002b00:00",
+    
+    "dateModified": "2025-01-09T00:00:00\u002b00:00",
+    
+    "keywords": ["Computer Vision","Visual Question Answering","🏢 University of Pennsylvania"],
+    
+    "mainEntityOfPage": "true",
+    "wordCount": "2742"
+  }]
+  </script>
+
+
+  
+  
+  
+  
+  
+
+<script src="/lib/jquery/jquery.slim.min.b0dca576e87d7eaa5850ae4e61759c065786cdb6489d68fcc82240539eebd5da522bdb4fda085ffd245808c8fe2acb2516408eb774ef26b5f6015fc6737c0ea8.js" integrity="sha512-sNylduh9fqpYUK5OYXWcBleGzbZInWj8yCJAU57r1dpSK9tP2ghf/SRYCMj&#43;KsslFkCOt3TvJrX2AV/Gc3wOqA=="></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script defer src="/lib/typeit/typeit.umd.57f9bc6e047efc875cb4f2e9ca74c802de33638d2c3aff6d9b7eb3c7588c24649b6c3e51cd45f49c0ed0cf72aedbd694bf2d35f358a34076d63f9febabc0bd6f.js" integrity="sha512-V/m8bgR&#43;/IdctPLpynTIAt4zY40sOv9tm36zx1iMJGSbbD5RzUX0nA7Qz3Ku29aUvy0181ijQHbWP5/rq8C9bw=="></script>
+
+
+
+
+    
+    <script defer src="/lib/packery/packery.pkgd.min.js" integrity=""></script>
+
+    
+    
+    <script type="text/javascript" src="/js/shortcodes/gallery.min.9b4cb28f931ed922c26fb9b2510c2debb370f6a63305050c2af81740b2919883715e24efbbdf3a081496718ec751df3a72729d4d0bc71d6071297563a97ce1ee.js" integrity="sha512-m0yyj5Me2SLCb7myUQwt67Nw9qYzBQUMKvgXQLKRmINxXiTvu986CBSWcY7HUd86cnKdTQvHHWBxKXVjqXzh7g=="></script>
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+  
+  
+  <meta name="theme-color"/>
+  
+  
+</head>
+<body
+  class="flex flex-col h-screen px-6 m-auto text-lg leading-7 max-w-7xl bg-neutral text-neutral-900 dark:bg-neutral-800 dark:text-neutral sm:px-14 md:px-24 lg:px-32 scrollbar-thin scrollbar-track-neutral-200 scrollbar-thumb-neutral-400 dark:scrollbar-track-neutral-800 dark:scrollbar-thumb-neutral-600">
+  <div id="the-top" class="absolute flex self-center">
+    <a class="px-3 py-1 text-sm -translate-y-8 rounded-b-lg bg-primary-200 focus:translate-y-0 dark:bg-neutral-600"
+      href="#main-content"><span
+        class="font-bold text-primary-600 ltr:pr-2 rtl:pl-2 dark:text-primary-400">&darr;</span>Skip to main content</a>
+  </div>
+  
+  
+  <div style="padding-left:0;padding-right:0;padding-top:2px;padding-bottom:3px"
+    class="main-menu flex items-center justify-between px-4 py-6 sm:px-6 md:justify-start space-x-3">
+    
+    <div class="flex flex-1 items-center justify-between">
+        <nav class="flex space-x-3">
+
+            
+            <a href="/" class="text-base font-medium text-gray-500 hover:text-gray-900">CIKM Paper Reviewer</a>
+            
+
+        </nav>
+        <nav class="hidden md:flex items-center space-x-5 md:ml-12 h-12">
+
+            
+
+            
+
+
+            
+            <button id="search-button" aria-label="Search" class="text-base hover:text-primary-600 dark:hover:text-primary-400"
+                title="">
+                
+
+  <span class="relative block icon">
+    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+
+  </span>
+
+
+            </button>
+            
+
+
+            
+            
+            <div
+                class="ltr:mr-14 rtl:ml-14 flex items-center">
+                <button id="appearance-switcher" aria-label="Dark mode switcher" type="button" class="text-base hover:text-primary-600 dark:hover:text-primary-400">
+                    <div class="flex items-center justify-center dark:hidden">
+                        
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M32 256c0-123.8 100.3-224 223.8-224c11.36 0 29.7 1.668 40.9 3.746c9.616 1.777 11.75 14.63 3.279 19.44C245 86.5 211.2 144.6 211.2 207.8c0 109.7 99.71 193 208.3 172.3c9.561-1.805 16.28 9.324 10.11 16.95C387.9 448.6 324.8 480 255.8 480C132.1 480 32 379.6 32 256z"/></svg>
+
+  </span>
+
+
+                    </div>
+                    <div class="items-center justify-center hidden dark:flex">
+                        
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 159.1c-53.02 0-95.1 42.98-95.1 95.1S202.1 351.1 256 351.1s95.1-42.98 95.1-95.1S309 159.1 256 159.1zM509.3 347L446.1 255.1l63.15-91.01c6.332-9.125 1.104-21.74-9.826-23.72l-109-19.7l-19.7-109c-1.975-10.93-14.59-16.16-23.72-9.824L256 65.89L164.1 2.736c-9.125-6.332-21.74-1.107-23.72 9.824L121.6 121.6L12.56 141.3C1.633 143.2-3.596 155.9 2.736 164.1L65.89 256l-63.15 91.01c-6.332 9.125-1.105 21.74 9.824 23.72l109 19.7l19.7 109c1.975 10.93 14.59 16.16 23.72 9.824L256 446.1l91.01 63.15c9.127 6.334 21.75 1.107 23.72-9.822l19.7-109l109-19.7C510.4 368.8 515.6 356.1 509.3 347zM256 383.1c-70.69 0-127.1-57.31-127.1-127.1c0-70.69 57.31-127.1 127.1-127.1s127.1 57.3 127.1 127.1C383.1 326.7 326.7 383.1 256 383.1z"/></svg>
+
+  </span>
+
+
+                    </div>
+                </button>
+            </div>
+            
+
+        </nav>
+        <div class="flex md:hidden items-center space-x-5 md:ml-12 h-12">
+
+            <span></span>
+
+            
+
+
+            
+            <button id="search-button-mobile" aria-label="Search" class="text-base hover:text-primary-600 dark:hover:text-primary-400"
+                title="">
+                
+
+  <span class="relative block icon">
+    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+
+  </span>
+
+
+            </button>
+            
+
+            
+            
+            <button id="appearance-switcher-mobile" aria-label="Dark mode switcher" type="button" class="text-base hover:text-primary-600 dark:hover:text-primary-400" style="margin-right:5px">
+                <div class="flex items-center justify-center dark:hidden">
+                    
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M32 256c0-123.8 100.3-224 223.8-224c11.36 0 29.7 1.668 40.9 3.746c9.616 1.777 11.75 14.63 3.279 19.44C245 86.5 211.2 144.6 211.2 207.8c0 109.7 99.71 193 208.3 172.3c9.561-1.805 16.28 9.324 10.11 16.95C387.9 448.6 324.8 480 255.8 480C132.1 480 32 379.6 32 256z"/></svg>
+
+  </span>
+
+
+                </div>
+                <div class="items-center justify-center hidden dark:flex">
+                    
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 159.1c-53.02 0-95.1 42.98-95.1 95.1S202.1 351.1 256 351.1s95.1-42.98 95.1-95.1S309 159.1 256 159.1zM509.3 347L446.1 255.1l63.15-91.01c6.332-9.125 1.104-21.74-9.826-23.72l-109-19.7l-19.7-109c-1.975-10.93-14.59-16.16-23.72-9.824L256 65.89L164.1 2.736c-9.125-6.332-21.74-1.107-23.72 9.824L121.6 121.6L12.56 141.3C1.633 143.2-3.596 155.9 2.736 164.1L65.89 256l-63.15 91.01c-6.332 9.125-1.105 21.74 9.824 23.72l109 19.7l19.7 109c1.975 10.93 14.59 16.16 23.72 9.824L256 446.1l91.01 63.15c9.127 6.334 21.75 1.107 23.72-9.822l19.7-109l109-19.7C510.4 368.8 515.6 356.1 509.3 347zM256 383.1c-70.69 0-127.1-57.31-127.1-127.1c0-70.69 57.31-127.1 127.1-127.1s127.1 57.3 127.1 127.1C383.1 326.7 326.7 383.1 256 383.1z"/></svg>
+
+  </span>
+
+
+                </div>
+            </button>
+            
+
+        </div>
+    </div>
+    <div class="-my-2 -mr-2 md:hidden">
+
+        <label id="menu-button" class="block">
+            
+
+            </div>
+        </label>
+    </div>
+</div>
+
+
+
+
+
+  
+  <div class="relative flex flex-col grow">
+    <main id="main-content" class="grow">
+      
+
+
+<article>
+  
+
+  <header id="single_header" class="mt-5 max-w-prose">
+    
+    <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
+      ReFocus: Visual Editing as a Chain of Thought for Structured Image Understanding
+    </h1>
+    <div class="mt-1 mb-6 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
+      
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="flex flex-row flex-wrap items-center">
+  
+  
+  <time datetime="2025-01-09T00:00:00&#43;00:00">January 9, 2025</time><span class="px-2 text-primary-500">&middot;</span><span>2742 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">13 mins</span>
+  
+
+  
+  
+</div>
+
+
+
+
+
+
+
+
+    </div>
+
+    
+    
+    
+    
+    
+
+    
+
+    
+      
+      
+        
+        
+<div class="flex author">
+  
+  <div class="place-self-center">
+    
+    
+    <div class="text-2xl sm:text-lg">
+</div>
+  </div>
+</div>
+
+      
+
+      
+
+      
+      <div class="mb-5"></div>
+      
+
+    
+
+  </header>
+  
+  <section class="flex flex-col max-w-full mt-0 prose dark:prose-invert lg:flex-row">
+    
+    
+
+      <div class="min-w-0 min-h-0 max-w-fit">
+        
+        
+
+
+        <div class="article-content max-w-prose mb-20">
+          <!-- raw HTML omitted -->
+<div class="flex flex-row flex-wrap items-center space-x-2">
+
+<div class="flex mt-2">
+<span
+  class="rounded-full bg-primary-500 dark:bg-primary-400 text-neutral-50 dark:text-neutral-800 px-1.5 py-[1px] text-xs font-normal"
+>
+  <span class="flex flex-row items-center">
+    
+    <span class="mr-1">
+
+</span>
+    
+    <span>2501.05452</span>
+  </span>
+</span>
+</div>
+
+<div class="flex mt-2">
+<span
+  class="rounded-full bg-primary-500 dark:bg-primary-400 text-neutral-50 dark:text-neutral-800 px-1.5 py-[1px] text-xs font-normal"
+>
+  <span class="flex flex-row items-center">
+    
+    <span class="mr-1">
+
+</span>
+    
+    <span>Xingyu Fu et el.</span>
+  </span>
+</span>
+</div>
+ 
+</div>
+
+<p><a
+  class="!rounded-md bg-primary-600 px-4 py-2 !text-neutral !no-underline hover:!bg-primary-500 dark:bg-primary-800 dark:hover:!bg-primary-700"
+  href="https://arxiv.org/abs/2501.05452"
+  target="_self"
+  
+  role="button"
+>
+  
+↗ arXiv
+
+</a>
+
+<a
+  class="!rounded-md bg-primary-600 px-4 py-2 !text-neutral !no-underline hover:!bg-primary-500 dark:bg-primary-800 dark:hover:!bg-primary-700"
+  href="https://huggingface.co/papers/2501.05452"
+  target="_self"
+  
+  role="button"
+>
+  
+↗ Hugging Face
+
+</a>
+
+<a
+  class="!rounded-md bg-primary-600 px-4 py-2 !text-neutral !no-underline hover:!bg-primary-500 dark:bg-primary-800 dark:hover:!bg-primary-700"
+  href="https://paperswithcode.com/paper/refocus-visual-editing-as-a-chain-of-thought"
+  target="_self"
+  
+  role="button"
+>
+  
+↗ Papers with Code
+
+</a>
+</p>
+
+
+<h3 class="relative group">TL;DR 
+    <div id="tldr" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#tldr" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<div class="lead text-neutral-500 dark:text-neutral-400 !mb-9 text-xl">
+  <p>Current multimodal LLMs struggle with structured image understanding because they lack the ability to strategically refocus on different parts of an image.  This requires multi-hop visual reasoning, which is a significant challenge.  Existing methods often extract image information into text first, limiting their ability to refine understanding iteratively.</p>
+<p>REFOCUS addresses this by equipping multimodal LLMs with the ability to perform visual editing (using Python code) on the input image, generating &lsquo;visual thoughts&rsquo;. This iterative process allows the model to strategically focus on relevant information, enhancing its reasoning capabilities. Experiments show significant performance gains across various structured image understanding tasks, demonstrating the effectiveness of REFOCUS and the value of visual chain-of-thought data for training.</p>
+
+</div>
+
+
+
+<h4 class="relative group">Key Takeaways 
+    <div id="key-takeaways" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#key-takeaways" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
+
+  
+
+
+
+<div
+  
+    class="flex px-4 py-3 rounded-md bg-primary-100 dark:bg-primary-900"
+  >
+
+  <span
+    
+      class="text-primary-400 ltr:pr-3 rtl:pl-3 flex items-center"
+    >
+
+    
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path fill="currentColor" d="M287.9 0C297.1 0 305.5 5.25 309.5 13.52L378.1 154.8L531.4 177.5C540.4 178.8 547.8 185.1 550.7 193.7C553.5 202.4 551.2 211.9 544.8 218.2L433.6 328.4L459.9 483.9C461.4 492.9 457.7 502.1 450.2 507.4C442.8 512.7 432.1 513.4 424.9 509.1L287.9 435.9L150.1 509.1C142.9 513.4 133.1 512.7 125.6 507.4C118.2 502.1 114.5 492.9 115.1 483.9L142.2 328.4L31.11 218.2C24.65 211.9 22.36 202.4 25.2 193.7C28.03 185.1 35.5 178.8 44.49 177.5L197.7 154.8L266.3 13.52C270.4 5.249 278.7 0 287.9 0L287.9 0zM287.9 78.95L235.4 187.2C231.9 194.3 225.1 199.3 217.3 200.5L98.98 217.9L184.9 303C190.4 308.5 192.9 316.4 191.6 324.1L171.4 443.7L276.6 387.5C283.7 383.7 292.2 383.7 299.2 387.5L404.4 443.7L384.2 324.1C382.9 316.4 385.5 308.5 391 303L476.9 217.9L358.6 200.5C350.7 199.3 343.9 194.3 340.5 187.2L287.9 78.95z"/></svg>
+  </span>
+
+
+  </span>
+
+  <span
+    
+      class="dark:text-neutral-300"
+    ><!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+</span>
+</div>
+
+
+  
+
+
+
+<div
+  
+    class="flex px-4 py-3 rounded-md bg-primary-100 dark:bg-primary-900"
+  >
+
+  <span
+    
+      class="text-primary-400 ltr:pr-3 rtl:pl-3 flex items-center"
+    >
+
+    
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path fill="currentColor" d="M287.9 0C297.1 0 305.5 5.25 309.5 13.52L378.1 154.8L531.4 177.5C540.4 178.8 547.8 185.1 550.7 193.7C553.5 202.4 551.2 211.9 544.8 218.2L433.6 328.4L459.9 483.9C461.4 492.9 457.7 502.1 450.2 507.4C442.8 512.7 432.1 513.4 424.9 509.1L287.9 435.9L150.1 509.1C142.9 513.4 133.1 512.7 125.6 507.4C118.2 502.1 114.5 492.9 115.1 483.9L142.2 328.4L31.11 218.2C24.65 211.9 22.36 202.4 25.2 193.7C28.03 185.1 35.5 178.8 44.49 177.5L197.7 154.8L266.3 13.52C270.4 5.249 278.7 0 287.9 0L287.9 0zM287.9 78.95L235.4 187.2C231.9 194.3 225.1 199.3 217.3 200.5L98.98 217.9L184.9 303C190.4 308.5 192.9 316.4 191.6 324.1L171.4 443.7L276.6 387.5C283.7 383.7 292.2 383.7 299.2 387.5L404.4 443.7L384.2 324.1C382.9 316.4 385.5 308.5 391 303L476.9 217.9L358.6 200.5C350.7 199.3 343.9 194.3 340.5 187.2L287.9 78.95z"/></svg>
+  </span>
+
+
+  </span>
+
+  <span
+    
+      class="dark:text-neutral-300"
+    ><!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+</span>
+</div>
+
+
+  
+
+
+
+<div
+  
+    class="flex px-4 py-3 rounded-md bg-primary-100 dark:bg-primary-900"
+  >
+
+  <span
+    
+      class="text-primary-400 ltr:pr-3 rtl:pl-3 flex items-center"
+    >
+
+    
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path fill="currentColor" d="M287.9 0C297.1 0 305.5 5.25 309.5 13.52L378.1 154.8L531.4 177.5C540.4 178.8 547.8 185.1 550.7 193.7C553.5 202.4 551.2 211.9 544.8 218.2L433.6 328.4L459.9 483.9C461.4 492.9 457.7 502.1 450.2 507.4C442.8 512.7 432.1 513.4 424.9 509.1L287.9 435.9L150.1 509.1C142.9 513.4 133.1 512.7 125.6 507.4C118.2 502.1 114.5 492.9 115.1 483.9L142.2 328.4L31.11 218.2C24.65 211.9 22.36 202.4 25.2 193.7C28.03 185.1 35.5 178.8 44.49 177.5L197.7 154.8L266.3 13.52C270.4 5.249 278.7 0 287.9 0L287.9 0zM287.9 78.95L235.4 187.2C231.9 194.3 225.1 199.3 217.3 200.5L98.98 217.9L184.9 303C190.4 308.5 192.9 316.4 191.6 324.1L171.4 443.7L276.6 387.5C283.7 383.7 292.2 383.7 299.2 387.5L404.4 443.7L384.2 324.1C382.9 316.4 385.5 308.5 391 303L476.9 217.9L358.6 200.5C350.7 199.3 343.9 194.3 340.5 187.2L287.9 78.95z"/></svg>
+  </span>
+
+
+  </span>
+
+  <span
+    
+      class="dark:text-neutral-300"
+    ><!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+</span>
+</div>
+
+
+
+<h4 class="relative group">Why does it matter? 
+    <div id="why-does-it-matter" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#why-does-it-matter" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
+<p>This paper is important because it introduces a novel framework, <strong>REFOCUS</strong>, that significantly improves the visual reasoning capabilities of multimodal LLMs on structured image understanding tasks.  It also presents a novel training dataset collected using REFOCUS, demonstrating the benefits of visual chain-of-thought supervision. This work opens new avenues for research in improving visual reasoning abilities of LLMs and developing more effective multimodal learning strategies.</p>
+<hr>
+
+
+<h4 class="relative group">Visual Insights 
+    <div id="visual-insights" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#visual-insights" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
+<p>
+  <figure>
+    <img class="my-0 rounded-md" loading="lazy" src="https://arxiv.org/html/2501.05452/x2.png" alt="" />
+    
+  </figure>
+</p>
+<blockquote>
+<p>🔼 This figure illustrates the ReFocus framework. ReFocus enhances large language models (LLMs) by incorporating visual reasoning steps.  It uses Python code to perform image editing, refining attention to key visual elements.  The process is iterative; the LLM generates code for a visual editing operation, the editing is performed on the image, and the modified image is fed back into the LLM. This continues until an answer is produced. The example shown depicts a TableVQA task where irrelevant columns are masked, and relevant rows are highlighted with a bounding box.</p>
+<!-- raw HTML omitted -->
+</blockquote>
+<div class="table-caption">
+  <table>
+  <thead>
+      <tr>
+          <th>Model</th>
+          <th>VWTQ</th>
+          <th>VWTQ_syn</th>
+          <th>VTabFact</th>
+          <th>CharXiv</th>
+          <th>Horizontal Bar</th>
+          <th>Vertical Bar</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>Table</strong></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td><strong>Chart</strong></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td><em>Prior Multimodal LMs</em></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>LLaVA-NeXT-34B [20]</td>
+          <td>36.4</td>
+          <td>38.0</td>
+          <td>71.2</td>
+          <td>18.9</td>
+          <td>23.4</td>
+          <td>12.6</td>
+      </tr>
+      <tr>
+          <td>Phi 3 vision [1]</td>
+          <td>44.7</td>
+          <td>53.2</td>
+          <td>74.4</td>
+          <td>16.2</td>
+          <td>60.8</td>
+          <td>66.5</td>
+      </tr>
+      <tr>
+          <td>Gemini-Pro 1.5 [33]</td>
+          <td>38.5</td>
+          <td>43.2</td>
+          <td>75.6</td>
+          <td>38.3</td>
+          <td>57.2</td>
+          <td>66.0</td>
+      </tr>
+      <tr>
+          <td>VisProg [10]</td>
+          <td>53.2</td>
+          <td>62.0</td>
+          <td>76.4</td>
+          <td>46.8</td>
+          <td>69.8</td>
+          <td>68.6</td>
+      </tr>
+      <tr>
+          <td><em>Latest multimodal LLMs + ReFocus</em></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>gpt-4o-2024-05-13 [26]</td>
+          <td>66.5</td>
+          <td>73.2</td>
+          <td>89.6</td>
+          <td>49.0</td>
+          <td>78.2</td>
+          <td>76.2</td>
+      </tr>
+      <tr>
+          <td>+ ReFocus</td>
+          <td>76.9</td>
+          <td>79.6</td>
+          <td>89.6</td>
+          <td><strong>57.3</strong></td>
+          <td><strong>85.4</strong></td>
+          <td>81.0</td>
+      </tr>
+      <tr>
+          <td></td>
+          <td>+10.4</td>
+          <td>+3.4</td>
+          <td>+0.0</td>
+          <td>+8.3</td>
+          <td>+7.2</td>
+          <td>+4.8</td>
+      </tr>
+      <tr>
+          <td>gpt-4o-2024-08-06 [26]</td>
+          <td>66.4</td>
+          <td>70.4</td>
+          <td>90.0</td>
+          <td>48.9</td>
+          <td>75.2</td>
+          <td>74.9</td>
+      </tr>
+      <tr>
+          <td>+ ReFocus</td>
+          <td><strong>77.2</strong></td>
+          <td><strong>82.8</strong></td>
+          <td><strong>90.8</strong></td>
+          <td>46.2</td>
+          <td>82.0</td>
+          <td><strong>81.2</strong></td>
+      </tr>
+      <tr>
+          <td></td>
+          <td>+9.8</td>
+          <td>+12.4</td>
+          <td>+0.8</td>
+          <td>-2.7</td>
+          <td>+5.0</td>
+          <td>+4.2</td>
+      </tr>
+  </tbody>
+</table>
+
+</div>
+
+
+<blockquote>
+<p>🔼 This table presents a comprehensive comparison of various multimodal large language models (LLMs) on several structured image understanding tasks, including those involving tables and charts.  It showcases the performance gains achieved by integrating the REFOCUS framework, which enhances the LLMs by incorporating visual editing.  The table compares REFOCUS-enhanced models against several baseline models, both prior multimodal LLMs and the latest GPT-4 model without visual editing.  For a fair comparison, the original VisProg framework (a visual programming approach) was adapted using the most up-to-date GPT-4 model to replace its original language model and visual question answering components. The results demonstrate consistent performance improvements across all tasks when using the REFOCUS framework.</p>
+<!-- raw HTML omitted -->
+</blockquote>
+
+
+<h3 class="relative group">In-depth insights 
+    <div id="in-depth-insights" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#in-depth-insights" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+
+
+<h4 class="relative group">Visual Chain of Thought 
+    <div id="visual-chain-of-thought" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#visual-chain-of-thought" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
+<p>The concept of &ldquo;Visual Chain of Thought&rdquo; presents a powerful advancement in multimodal reasoning.  It extends the successful &ldquo;Chain of Thought&rdquo; prompting paradigm by integrating visual processing and manipulation as integral steps in the reasoning process.  Instead of relying solely on textual intermediate steps, <strong>Visual Chain of Thought leverages visual editing operations</strong> – such as drawing boxes, highlighting regions, or masking irrelevant areas – to guide the model&rsquo;s attention and refine its understanding of the visual input. This iterative process of visual analysis and manipulation, coupled with textual reasoning, allows the model to tackle complex visual tasks that require multi-step reasoning and selective attention.  <strong>Key benefits include improved visual grounding, reduced hallucinations, and enhanced model performance</strong> on tasks involving structured images like tables and charts.  The introduction of visual edits as intermediate steps provides a more interpretable and insightful reasoning pathway, offering valuable insights into how the model arrives at its conclusions.  <strong>Furthermore, training models on Visual Chain of Thought data appears to yield superior performance</strong> compared to traditional training approaches, suggesting a novel and effective method for improving multimodal reasoning abilities.</p>
+
+
+<h4 class="relative group">Visual Editing Effects 
+    <div id="visual-editing-effects" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#visual-editing-effects" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
+<p>The effects of visual editing on image understanding models are multifaceted and significant.  <strong>REFOCUS leverages Python code to perform edits like drawing boxes, highlighting, and masking image regions</strong>. This approach allows the model to selectively focus attention on relevant parts of the image, filtering out distracting elements.  The impact on model performance is substantial, with significant improvements seen across various structured image understanding tasks involving tables and charts, showcasing <strong>enhanced visual reasoning capabilities</strong>.  Interestingly, these improvements aren&rsquo;t solely due to additional information provided by the edits, but rather from improved attention mechanisms and a reduction in model hallucinations.  This points to <strong>the crucial role of visual attention guidance in effective reasoning</strong> in multimodal models.  The effectiveness also depends on the type of edit employed, with some edits contributing more than others to improved performance, highlighting the importance of thoughtful, task-appropriate edit selection.  Further research on this method may reveal insights into optimizing visual reasoning strategies for multimodal AI.</p>
+
+
+<h4 class="relative group">REFOCUS Dataset 
+    <div id="refocus-dataset" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#refocus-dataset" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
+<p>A hypothetical REFOCUS dataset would be crucial for training and evaluating the proposed visual editing framework.  Its design would need careful consideration.  <strong>Data diversity</strong> is paramount; it should include a wide variety of structured images (tables, charts, forms, etc.) with diverse layouts, styles, and levels of complexity.  <strong>Annotation quality</strong> is also vital; each image would require detailed annotations indicating the optimal sequence of visual edits, including their type (masking, highlighting, drawing boxes), target regions, and the reasoning behind each edit.  <strong>Task variety</strong> is important to make the dataset broadly applicable; it could include tasks like visual question answering, information extraction, and table interpretation.  <strong>A robust evaluation metric</strong> that captures the model&rsquo;s ability to perform effective visual reasoning and achieve high accuracy would be necessary.  Finally, <strong>dataset size</strong> should be substantial enough to support the training of large, powerful multimodal models. The dataset&rsquo;s value would further depend on factors like its accessibility and documentation, encouraging reproducible research and fostering community contribution.</p>
+
+
+<h4 class="relative group">Multimodal LLM gains 
+    <div id="multimodal-llm-gains" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#multimodal-llm-gains" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
+<p>Analyzing potential gains from multimodal LLMs requires a nuanced approach.  <strong>Improved visual reasoning</strong> is a key area; these models struggle with multi-hop reasoning and selective attention in complex images like tables and charts.  <strong>REFOCUS</strong> addresses this by enabling LLMs to generate visual thoughts via image editing, iteratively refining their focus and improving performance.  <strong>Data augmentation</strong> is another factor; training sets for structured image understanding are smaller and less diverse than natural image datasets.  Using REFOCUS to generate chain-of-thought data with intermediate information creates a richer training signal.  <strong>The simple approach of visual editing</strong> in REFOCUS surprisingly yields significant performance gains, highlighting the potential of combining LLMs with simple yet strategic visual processing.   However, <strong>careful consideration</strong> of the limitations is important;  generalizing to unseen data and chart types remains a challenge, while the computational cost of visual processing needs to be balanced with potential gains. Further research should explore optimizing the visual editing process and expanding the range of applicable visual tasks.</p>
+
+
+<h4 class="relative group">Future Work 
+    <div id="future-work" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#future-work" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
+<p>Future research directions stemming from this paper on REFOCUS could explore several promising avenues.  <strong>Expanding the scope of visual editing tools</strong> beyond the current set would significantly enhance the model&rsquo;s capabilities. Incorporating more sophisticated tools, such as those enabling complex image manipulations or semantic understanding, could lead to more nuanced visual reasoning. Another crucial direction involves <strong>improving the efficiency of the visual reasoning process</strong>. Currently, the iterative editing process can be time-consuming.  Investigating methods to optimize this workflow, perhaps by leveraging more advanced planning or reinforcement learning techniques, is essential.  Furthermore, <strong>exploring the generalizability of REFOCUS</strong> to different types of multimodal LLMs and diverse visual data modalities is vital.  <strong>Benchmarking REFOCUS</strong> against a wider range of state-of-the-art visual reasoning models on a variety of challenging datasets is necessary to comprehensively evaluate its effectiveness. Finally, a deeper investigation into the <strong>theoretical underpinnings of visual chain-of-thought</strong> reasoning would be highly beneficial, potentially uncovering new insights into how LLMs process visual information. This could inform the design of more effective and robust visual reasoning methods for future multimodal AI systems.</p>
+
+
+<h3 class="relative group">More visual insights 
+    <div id="more-visual-insights" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#more-visual-insights" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<!-- raw HTML omitted -->
+<p>
+  <figure>
+    <img class="my-0 rounded-md" loading="lazy" src="https://arxiv.org/html/2501.05452/x3.png" alt="" />
+    
+  </figure>
+</p>
+<blockquote>
+<p>🔼 This figure demonstrates how ReFocus improves visual grounding in a chart question answering (ChartQA) task. The left panel shows an original horizontal bar chart, where GPT-4 incorrectly identifies the bars to answer the question. ReFocus modifies the image by visually editing it. This allows GPT-4 to correctly interpret the chart and produce the correct answer (right panel). The improvement highlights how ReFocus enhances the reasoning process.</p>
+<!-- raw HTML omitted -->
+</blockquote>
+<p>
+  <figure>
+    <img class="my-0 rounded-md" loading="lazy" src="https://arxiv.org/html/2501.05452/x4.png" alt="" />
+    
+  </figure>
+</p>
+<blockquote>
+<p>🔼 This figure demonstrates how REFOCUS, a framework that incorporates visual editing into the reasoning process of large language models (LLMs), improves the ability of GPT-4 to solve complex problems. The example shown involves the ChartXiv dataset, specifically a chart with four subplots. REFOCUS edits the original image by masking out three irrelevant subplots, thereby enabling GPT-4 to focus solely on the relevant subplot and reach the correct answer, overcoming limitations of standard LLMs that struggle with such multi-hop visual reasoning problems.</p>
+<!-- raw HTML omitted -->
+</blockquote>
+<p>
+  <figure>
+    <img class="my-0 rounded-md" loading="lazy" src="https://arxiv.org/html/2501.05452/x5.png" alt="" />
+    
+  </figure>
+</p>
+<blockquote>
+<p>🔼 Figure 4 demonstrates how REFOCUS improves GPT-4&rsquo;s performance on a visual question answering task involving vertical bar charts from the ChartQA dataset.  The left panel shows GPT-4&rsquo;s original response to the question &lsquo;How many years have value less than 10%&rsquo; applied to a chart displaying year-over-year percentage changes. GPT-4 incorrectly identifies four years. The right panel presents the improved response after employing REFOCUS. REFOCUS guides GPT-4 to focus on the relevant parts of the chart, leading to the correct answer of five years.</p>
+<!-- raw HTML omitted -->
+</blockquote>
+<p>
+  <figure>
+    <img class="my-0 rounded-md" loading="lazy" src="https://arxiv.org/html/2501.05452/x6.png" alt="" />
+    
+  </figure>
+</p>
+<blockquote>
+<p>🔼 The figure showcases how REFOCUS enhances the performance of GPT-4 in Optical Character Recognition (OCR) tasks within the context of structured image understanding.  Specifically, it demonstrates the use of the &lsquo;highlight_column&rsquo; visual editing function within the REFOCUS framework. By highlighting a relevant column in a table image, REFOCUS guides GPT-4 to focus its attention on the crucial region, thereby improving the accuracy of character recognition and reducing errors.  This example is taken from the TableVQA dataset.</p>
+<!-- raw HTML omitted -->
+</blockquote>
+<p>
+  <figure>
+    <img class="my-0 rounded-md" loading="lazy" src="https://arxiv.org/html/2501.05452/x7.png" alt="" />
+    
+  </figure>
+</p>
+<blockquote>
+<p>🔼 This figure illustrates the process of creating a training dataset for multimodal large language models using the ReFocus framework and the ChartQA dataset.  It shows how ReFocus guides the model to perform visual edits on chart images, generating a chain of thought and intermediate visual artifacts. These visual edits, along with the original question, the model&rsquo;s reasoning, and the final answer, constitute a single data point in the new training dataset. The overall process enhances the model&rsquo;s learning by providing intermediate reasoning steps in visual form, leading to improved performance.</p>
+<!-- raw HTML omitted -->
+</blockquote>
+<p>
+  <figure>
+    <img class="my-0 rounded-md" loading="lazy" src="https://arxiv.org/html/2501.05452/x8.png" alt="" />
+    
+  </figure>
+</p>
+<blockquote>
+<p>🔼 This figure presents a bar chart visualizing the frequency of visual editing actions performed by the REFOCUS framework across various datasets.  It shows, for each dataset, the percentage of images where the underlying multimodal LLM (GPT-4 in this case) decided to generate and execute code to perform visual edits (such as drawing boxes, masking regions, or highlighting areas). The datasets include: VWTQ, VWTQ_syn, VTabFact, CharXiv, Horizontal Bar, and Vertical Bar. The chart offers a quantitative insight into the extent to which the model leveraged visual edits within its reasoning process for different types of structured images.</p>
+<!-- raw HTML omitted -->
+</blockquote>
+<p>
+  <figure>
+    <img class="my-0 rounded-md" loading="lazy" src="https://arxiv.org/html/2501.05452/x13.png" alt="" />
+    
+  </figure>
+</p>
+<blockquote>
+<p>🔼 This figure demonstrates the visual chain of thought reasoning process of two different methods: The Phi-3.5-vision model fine-tuned with ReFocus data and the ReFocus + GPT-4o prompting method.  Both methods highlight relevant regions of interest in chart images to facilitate visual reasoning. The fine-tuned model directly outputs the areas to focus on in text format with bounding box coordinates, whereas ReFocus + GPT-4o uses an iterative process, generating visual edits and feeding them back into the model until a final answer is reached. The red boxes in the images highlight the regions identified by each method as crucial for answering the questions. By comparing the highlighted areas, one can observe the similarities and differences in how each method identifies salient features for visual reasoning.</p>
+<!-- raw HTML omitted -->
+</blockquote>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<div class="table-caption">
+  <table>
+  <thead>
+      <tr>
+          <th>Model</th>
+          <th>VWTQ</th>
+          <th>VWTQ_syn</th>
+          <th>VTabFact</th>
+          <th>CharXiv</th>
+          <th>Horizontal Bar</th>
+          <th>Vertical Bar</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Multimodal LLMs with original visual inputs</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>LLaVA-NeXT-7B [20]</td>
+          <td>21.7</td>
+          <td>24.0</td>
+          <td>56.8</td>
+          <td>16.1</td>
+          <td>8.1</td>
+          <td>7.3</td>
+      </tr>
+      <tr>
+          <td>LLaVA-NeXT-13B [20]</td>
+          <td>25.6</td>
+          <td>30.4</td>
+          <td>62.4</td>
+          <td>18.9</td>
+          <td>13.5</td>
+          <td>13.1</td>
+      </tr>
+      <tr>
+          <td>LLaVA-NeXT-34B [20]</td>
+          <td>36.4</td>
+          <td>38.0</td>
+          <td>71.2</td>
+          <td>18.9</td>
+          <td>23.4</td>
+          <td>12.6</td>
+      </tr>
+      <tr>
+          <td>Phi 3 vision [1]</td>
+          <td>44.7</td>
+          <td>53.2</td>
+          <td><strong>74.4</strong></td>
+          <td>16.2</td>
+          <td><strong>60.8</strong></td>
+          <td><strong>66.5</strong></td>
+      </tr>
+      <tr>
+          <td>Multimodal LLMs with ReFocus edited visual inputs</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>LLaVA-NeXT-7B + Oracle ReFocus</td>
+          <td>25.7</td>
+          <td>26.8</td>
+          <td>55.2</td>
+          <td>15.4</td>
+          <td>6.8</td>
+          <td>8.4</td>
+      </tr>
+      <tr>
+          <td>LLaVA-NeXT-13B + Oracle ReFocus</td>
+          <td>30.3</td>
+          <td>31.6</td>
+          <td>61.2</td>
+          <td>17.5</td>
+          <td>15.5</td>
+          <td>13.1</td>
+      </tr>
+      <tr>
+          <td>LLaVA-NeXT-34B + Oracle ReFocus</td>
+          <td>39.1</td>
+          <td>41.2</td>
+          <td>68.0</td>
+          <td><strong>21.0</strong></td>
+          <td>26.1</td>
+          <td>15.2</td>
+      </tr>
+      <tr>
+          <td>Phi 3 vision + Oracle ReFocus</td>
+          <td><strong>48.3</strong></td>
+          <td><strong>56.4</strong></td>
+          <td>72.8</td>
+          <td>17.6</td>
+          <td>60.4</td>
+          <td><strong>66.5</strong></td>
+      </tr>
+  </tbody>
+</table>
+
+</div>
+
+
+<blockquote>
+<p>🔼 This table compares the performance of several open-source multimodal large language models (LLMs) on structured image understanding tasks.  It contrasts their accuracy when processing original images versus when using images that have been edited by the ReFocus method.  Specifically, the &lsquo;+ oracle ReFocus&rsquo; results show the LLM&rsquo;s performance using only the final, edited image produced by ReFocus, demonstrating the impact of ReFocus&rsquo;s visual editing on the model&rsquo;s ability to understand structured images.</p>
+<!-- raw HTML omitted -->
+</blockquote>
+<div class="table-caption">
+  <table>
+  <thead>
+      <tr>
+          <th>Model</th>
+          <th>VWTQ</th>
+          <th>VWTQ_syn</th>
+          <th>VTabFact</th>
+          <th>CharXiv</th>
+          <th>Horizontal Bar</th>
+          <th>Vertical Bar</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>Table</strong></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>GPT-4o Model</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>Text input</td>
+          <td>68.1</td>
+          <td>69.6</td>
+          <td>80.0</td>
+          <td>\</td>
+          <td>66.2</td>
+          <td>74.9</td>
+      </tr>
+      <tr>
+          <td>Figure Input</td>
+          <td>61.0</td>
+          <td>68.4</td>
+          <td>88.4</td>
+          <td>47.9</td>
+          <td>75.2</td>
+          <td>74.9</td>
+      </tr>
+      <tr>
+          <td>Text + Figure Input</td>
+          <td>67.5</td>
+          <td>72.8</td>
+          <td>91.6</td>
+          <td>\</td>
+          <td>75.7</td>
+          <td>81.7</td>
+      </tr>
+      <tr>
+          <td>GPT-4o + ReFocus</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>Figure Input</td>
+          <td>77.2</td>
+          <td>82.8</td>
+          <td>90.8</td>
+          <td>57.3</td>
+          <td>85.4</td>
+          <td>81.2</td>
+      </tr>
+      <tr>
+          <td></td>
+          <td>+16.2</td>
+          <td>+14.4</td>
+          <td>+2.4</td>
+          <td>+10.6</td>
+          <td>+9.7</td>
+          <td>+0.5</td>
+      </tr>
+  </tbody>
+</table>
+
+</div>
+
+
+<blockquote>
+<p>🔼 This table compares the performance of GPT-4o with and without ReFocus on various structured image understanding tasks.  The &lsquo;gold text input&rsquo; refers to providing the model with the text version of the tables instead of the images. The key finding is that ReFocus improves GPT-4o&rsquo;s performance to a level comparable to using the text data directly. The table highlights the gains from visual editing, especially considering that Table 1 shows conversational performance without visual edits, and this table focuses on direct question answering, leading to slight discrepancies in scores.</p>
+<!-- raw HTML omitted -->
+</blockquote>
+<div class="table-caption">
+  <table>
+  <thead>
+      <tr>
+          <th>Dataset</th>
+          <th>Original</th>
+          <th>Mask out</th>
+          <th>Draw Box</th>
+          <th>Highlight</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>VWTQ</td>
+          <td>66.4</td>
+          <td>77.2</td>
+          <td><strong>77.6</strong></td>
+          <td>74.8</td>
+      </tr>
+      <tr>
+          <td>VWTQ_syn</td>
+          <td>70.4</td>
+          <td><strong>82.4</strong></td>
+          <td>78.8</td>
+          <td>80.8</td>
+      </tr>
+  </tbody>
+</table>
+
+</div>
+
+
+<blockquote>
+<p>🔼 This table presents the results of an ablation study to analyze how different visual editing tools used in the REFOCUS framework impact model performance.  The study controls for the type of visual editing tool (mask out, draw box, highlight) while keeping the overall methodology consistent.  The evaluation metrics are applied to two datasets, VWTQ and VWTQ_syn,  allowing for comparison of the effectiveness across different data and editing techniques.</p>
+<!-- raw HTML omitted -->
+</blockquote>
+<div class="table-caption">
+  <table>
+  <thead>
+      <tr>
+          <th></th>
+          <th>Horizontal Bar</th>
+          <th>Vertical Bar</th>
+          <th>Avg.</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><em>QA Prompting</em></td>
+          <td></td>
+          <td></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>Phi-3.5-vision [12]</td>
+          <td>60.1</td>
+          <td>63.1</td>
+          <td>61.5</td>
+      </tr>
+      <tr>
+          <td>SFT w/ QA Data</td>
+          <td>60.1</td>
+          <td>65.5</td>
+          <td>62.6</td>
+      </tr>
+      <tr>
+          <td><em>Visual CoT Prompting</em></td>
+          <td></td>
+          <td></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>Phi-3.5-vision [12]</td>
+          <td>69.4</td>
+          <td>66.8</td>
+          <td>68.2</td>
+      </tr>
+      <tr>
+          <td>SFT w/ QA Data</td>
+          <td>60.6</td>
+          <td>66.8</td>
+          <td>63.4</td>
+      </tr>
+      <tr>
+          <td>SFT w/ ReFocus CoT</td>
+          <td>67.1</td>
+          <td>70.7</td>
+          <td>68.8</td>
+      </tr>
+      <tr>
+          <td>SFT w/ ReFocus VCoT</td>
+          <td><strong>71.0</strong></td>
+          <td><strong>72.2</strong></td>
+          <td><strong>71.4</strong></td>
+      </tr>
+  </tbody>
+</table>
+
+</div>
+
+
+<blockquote>
+<p>🔼 This table presents the results of supervised fine-tuning (SFT) experiments on the Phi-3.5-vision model.  The model was fine-tuned using three different datasets: standard Question Answering (QA) pairs, Chain-of-Thought (CoT) data, and ReFocus Visual Chain-of-Thought (VCoT) data. The ReFocus VCoT data includes bounding box coordinates specifying the areas of focus within the images, which is the key difference from the other two datasets. The table shows the accuracy achieved on Horizontal and Vertical Bar chart tasks for each dataset and prompting method (QA prompting and Visual CoT prompting).  The results highlight the impact of incorporating visual reasoning information (bounding boxes) into the training data on model performance.</p>
+<!-- raw HTML omitted -->
+</blockquote>
+<div class="table-caption">
+  <table>
+  <thead>
+      <tr>
+          <th style="text-align: left"></th>
+          <th style="text-align: center">Horizontal Bar</th>
+          <th style="text-align: center">Vertical Bar</th>
+          <th style="text-align: center">Total</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">QA Data [24]</td>
+          <td style="text-align: center">4,990</td>
+          <td style="text-align: center">10,069</td>
+          <td style="text-align: center">15,059</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">ReFocus Data</td>
+          <td style="text-align: center">4,722</td>
+          <td style="text-align: center">9,622</td>
+          <td style="text-align: center">14,344</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">w/ Editing</td>
+          <td style="text-align: center">4,220</td>
+          <td style="text-align: center">8,599</td>
+          <td style="text-align: center">12,819</td>
+      </tr>
+  </tbody>
+</table>
+
+</div>
+
+
+<blockquote>
+<p>🔼 This table presents a statistical summary of the dataset used for training in the REFOCUS model. It shows the total number of training samples in the ChartQA dataset, the number of samples that involved visual editing, and the breakdown of these numbers across different chart types (horizontal bar, vertical bar, etc.). This information provides insights into the composition and characteristics of the dataset used to train the model.</p>
+<!-- raw HTML omitted -->
+</blockquote>
+<div class="table-caption">
+  <table>
+  <thead>
+      <tr>
+          <th>Header</th>
+          <th>w/ default QA Data</th>
+          <th>w/ ReFocus VCoT</th>
+          <th>w/ ReFocus CoT</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>data type</td>
+          <td>bf16</td>
+          <td>bf16</td>
+          <td>bf16</td>
+      </tr>
+      <tr>
+          <td>batch size</td>
+          <td>64</td>
+          <td>64</td>
+          <td>64</td>
+      </tr>
+      <tr>
+          <td>learning rate</td>
+          <td>5e-07</td>
+          <td>1e-06</td>
+          <td>5e-06</td>
+      </tr>
+      <tr>
+          <td>epoch number</td>
+          <td>2</td>
+          <td>2</td>
+          <td>2</td>
+      </tr>
+      <tr>
+          <td>include edited image in input</td>
+          <td>No</td>
+          <td>No</td>
+          <td>Yes</td>
+      </tr>
+  </tbody>
+</table>
+
+</div>
+
+
+<blockquote>
+<p>🔼 This table presents the hyperparameter settings used to achieve the best performance in the fine-tuning experiments of the REFOCUS model.  It lists the data type, batch size, learning rate, number of epochs, and whether or not edited images were included as input for three different fine-tuning scenarios: with default QA data, with REFOCUS VCoT (visual chain-of-thought) data, and with REFOCUS CoT data.</p>
+<!-- raw HTML omitted -->
+</blockquote>
+<!-- raw HTML omitted -->
+
+
+<h3 class="relative group">Full paper 
+    <div id="full-paper" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#full-paper" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+
+
+<div id="gallery-74c2f4e92c9040c9f8d678e89aa590b0" class="gallery">
+  
+<img src="paper_images/1.png" class="grid-w50 md:grid-w33 xl:grid-w25" />
+<img src="paper_images/2.png" class="grid-w50 md:grid-w33 xl:grid-w25" />
+<img src="paper_images/3.png" class="grid-w50 md:grid-w33 xl:grid-w25" />
+<img src="paper_images/4.png" class="grid-w50 md:grid-w33 xl:grid-w25" />
+<img src="paper_images/5.png" class="grid-w50 md:grid-w33 xl:grid-w25" />
+<img src="paper_images/6.png" class="grid-w50 md:grid-w33 xl:grid-w25" />
+<img src="paper_images/7.png" class="grid-w50 md:grid-w33 xl:grid-w25" />
+<img src="paper_images/8.png" class="grid-w50 md:grid-w33 xl:grid-w25" />
+<img src="paper_images/9.png" class="grid-w50 md:grid-w33 xl:grid-w25" />
+<img src="paper_images/10.png" class="grid-w50 md:grid-w33 xl:grid-w25" />
+<img src="paper_images/11.png" class="grid-w50 md:grid-w33 xl:grid-w25" />
+<img src="paper_images/12.png" class="grid-w50 md:grid-w33 xl:grid-w25" />
+<img src="paper_images/13.png" class="grid-w50 md:grid-w33 xl:grid-w25" />
+<img src="paper_images/14.png" class="grid-w50 md:grid-w33 xl:grid-w25" />
+<img src="paper_images/15.png" class="grid-w50 md:grid-w33 xl:grid-w25" />
+<img src="paper_images/16.png" class="grid-w50 md:grid-w33 xl:grid-w25" />
+<img src="paper_images/17.png" class="grid-w50 md:grid-w33 xl:grid-w25" />
+<img src="paper_images/18.png" class="grid-w50 md:grid-w33 xl:grid-w25" />
+<img src="paper_images/19.png" class="grid-w50 md:grid-w33 xl:grid-w25" />
+<img src="paper_images/20.png" class="grid-w50 md:grid-w33 xl:grid-w25" />
+
+</div>
+
+          
+          
+          
+        </div>
+        
+        
+
+        
+        
+
+          
+      </div>
+     
+      
+      
+        
+        
+          
+          
+        
+      <script>
+        var oid = "views_2501.05452\/index.md"
+        var oid_likes = "likes_2501.05452\/index.md"
+      </script>
+      
+      
+      <script type="text/javascript" src="/js/page.min.0860cf4e04fa2d72cc33ddba263083464d48f67de06114529043cb4623319efed4f484fd7f1730df5abea0e2da6f3538855634081d02f2d6e920b956f063e823.js" integrity="sha512-CGDPTgT6LXLMM926JjCDRk1I9n3gYRRSkEPLRiMxnv7U9IT9fxcw31q&#43;oOLabzU4hVY0CB0C8tbpILlW8GPoIw=="></script>
+      
+  
+    </section>
+  <footer class="pt-8 max-w-prose print:hidden">
+
+    
+  
+    
+    
+    
+    <div class="pt-8">
+      <hr class="border-dotted border-neutral-300 dark:border-neutral-600" />
+      <div class="flex justify-between pt-3">
+        <span>
+          
+            <a class="flex group mr-3" href="/2412.13663/">
+              <span
+                class="mr-3 text-neutral-700 group-hover:text-primary-600 ltr:inline rtl:hidden dark:text-neutral dark:group-hover:text-primary-400"
+                >&larr;</span
+              >
+              <span
+                class="ml-3 text-neutral-700 group-hover:text-primary-600 ltr:hidden rtl:inline dark:text-neutral dark:group-hover:text-primary-400"
+                >&rarr;</span
+              >
+              <span class="flex flex-col">
+                <span
+                  class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
+                  >Smarter, Better, Faster, Longer: A Modern Bidirectional Encoder for Fast, Memory Efficient, and Long Context Finetuning and Inference</span
+                >
+                <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
+                  
+                    <time datetime="2024-12-18T00:00:00&#43;00:00">December 18, 2024</time>
+                  
+                </span>
+              </span>
+            </a>
+          
+        </span>
+        <span>
+          
+        </span>
+      </div>
+    </div>
+  
+
+
+    
+  </footer>
+</article>
+
+      <div id="top-scroller" class="pointer-events-none absolute top-[110vh] bottom-0 w-12 ltr:right-0 rtl:left-0">
+  <a href="#the-top"
+    class="pointer-events-auto sticky top-[calc(100vh-5.5rem)] flex h-12 w-12 mb-16 items-center justify-center rounded-full bg-neutral/50 text-xl text-neutral-700 hover:text-primary-600 dark:bg-neutral-800/50 dark:text-neutral dark:hover:text-primary-400"
+    aria-label="Scroll to top" title="Scroll to top">
+    &uarr;
+  </a>
+</div>
+    </main><footer id="site-footer" class="py-10 print:hidden">
+  
+  
+    
+  
+  <div class="flex items-center justify-between">
+
+    
+    
+    <p class="text-sm text-neutral-500 dark:text-neutral-400">
+      &copy;
+      2025
+      
+    </p>
+    
+
+    
+    
+    <p class="text-xs text-neutral-500 dark:text-neutral-400">
+      
+      
+      Powered by <a class="hover:underline hover:decoration-primary-400 hover:text-primary-500"
+        href="https://gohugo.io/" target="_blank" rel="noopener noreferrer">Hugo</a> &amp; <a class="hover:underline hover:decoration-primary-400 hover:text-primary-500"
+        href="https://blowfish.page/" target="_blank" rel="noopener noreferrer">Blowfish</a>
+    </p>
+    
+
+  </div>
+  <script>
+    
+    mediumZoom(document.querySelectorAll("img:not(.nozoom)"), {
+      margin: 24,
+      background: 'rgba(0,0,0,0.5)',
+      scrollOffset: 0,
+    })
+    
+  </script>
+  
+  
+  <script type="text/javascript" src="/js/process.min.ee03488f19c93c2efb199e2e3014ea5f3cb2ce7d45154adb3399a158cac27ca52831db249ede5bb602700ef87eb02434139de0858af1818ab0fb4182472204a4.js" integrity="sha512-7gNIjxnJPC77GZ4uMBTqXzyyzn1FFUrbM5mhWMrCfKUoMdsknt5btgJwDvh&#43;sCQ0E53ghYrxgYqw&#43;0GCRyIEpA=="></script>
+  
+  
+</footer>
+<div
+  id="search-wrapper"
+  class="invisible fixed inset-0 flex h-screen w-screen cursor-default flex-col bg-neutral-500/50 p-4 backdrop-blur-sm dark:bg-neutral-900/50 sm:p-6 md:p-[10vh] lg:p-[12vh]"
+  data-url="http://localhost:6006/"
+  style="z-index:500"
+>
+  <div
+    id="search-modal"
+    class="flex flex-col w-full max-w-3xl min-h-0 mx-auto border rounded-md shadow-lg top-20 border-neutral-200 bg-neutral dark:border-neutral-700 dark:bg-neutral-800"
+  >
+    <header class="relative z-10 flex items-center justify-between flex-none px-2">
+      <form class="flex items-center flex-auto min-w-0">
+        <div class="flex items-center justify-center w-8 h-8 text-neutral-400">
+          
+
+  <span class="relative block icon">
+    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+
+  </span>
+
+
+        </div>
+        <input
+          type="search"
+          id="search-query"
+          class="flex flex-auto h-12 mx-1 bg-transparent appearance-none focus:outline-dotted focus:outline-2 focus:outline-transparent"
+          placeholder="Search"
+          tabindex="0"
+        />
+      </form>
+      <button
+        id="close-search-button"
+        class="flex items-center justify-center w-8 h-8 text-neutral-700 hover:text-primary-600 dark:text-neutral dark:hover:text-primary-400"
+        title="Close (Esc)"
+      >
+        
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z"/></svg>
+
+  </span>
+
+
+      </button>
+    </header>
+    <section class="flex-auto px-2 overflow-auto">
+      <ul id="search-results">
+        
+      </ul>
+    </section>
+  </div>
+</div>
+
+  </div>
+</body>
+
+</html>
